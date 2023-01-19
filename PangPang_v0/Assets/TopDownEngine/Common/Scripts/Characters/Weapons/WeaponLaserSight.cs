@@ -130,7 +130,7 @@ namespace MoreMountains.TopDownEngine
 				_raycastOrigin = MMMaths.RotatePointAroundPivot(_thisPosition + RaycastOriginOffset, _thisPosition, _thisRotation);
 
 				// we cast a ray in front of the weapon to detect an obstacle
-				_hit = MMDebug.Raycast3D(_raycastOrigin, _thisForward, LaserMaxDistance, LaserCollisionMask, Color.red, true);
+				_hit = PhysicsDebug.Raycast3D(_raycastOrigin, _thisForward, LaserMaxDistance, LaserCollisionMask, Color.red, true);
 
 				// if we've hit something, our destination is the raycast hit
 				if (_hit.transform != null)
@@ -155,7 +155,7 @@ namespace MoreMountains.TopDownEngine
 				_origin = _raycastOrigin;
 
 				// we cast a ray in front of the weapon to detect an obstacle
-				_hit2D = MMDebug.RayCast(_raycastOrigin, _weaponRotation * _direction, LaserMaxDistance, LaserCollisionMask, Color.red, true);
+				_hit2D = PhysicsDebug.RayCast(_raycastOrigin, _weaponRotation * _direction, LaserMaxDistance, LaserCollisionMask, Color.red, true);
 				if (_hit2D)
 				{
 					_destination = _hit2D.point;

@@ -20,10 +20,10 @@ namespace MoreMountains.Tools
 		/// whether to record every X frames, or every X seconds
 		public Modes Mode = Modes.Framecount;
 		/// the amount of frames to wait for between two recordings
-		[MMEnumCondition("Mode", (int)Modes.Framecount)]
+		[EnumCondition("Mode", (int)Modes.Framecount)]
 		public int FrameInterval = 0;
 		/// the duration (in seconds) between two recordings
-		[MMEnumCondition("Mode", (int) Modes.Time)]
+		[EnumCondition("Mode", (int) Modes.Time)]
 		public float TimeInterval = 0.02f;
 		/// whether or not to record if the timescale is 0
 		public bool RecordOnTimescaleZero = false;

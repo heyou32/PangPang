@@ -16,14 +16,14 @@ namespace MoreMountains.Tools
 		[Header("Framerate")]
 		public FramerateModes FramerateMode = FramerateModes.Automatic;
 
-		[MMEnumCondition("FramerateMode", (int)FramerateModes.Automatic)]
+		[EnumCondition("FramerateMode", (int)FramerateModes.Automatic)]
 		public float FramesPerSecond = 4f;
-		[MMEnumCondition("FramerateMode", (int)FramerateModes.Automatic)]
+		[EnumCondition("FramerateMode", (int)FramerateModes.Automatic)]
 		public float PollFrequency = 1f;
 
-		[MMEnumCondition("FramerateMode", (int)FramerateModes.Manual)]
+		[EnumCondition("FramerateMode", (int)FramerateModes.Manual)]
 		public float ManualTimeBetweenFrames = 0.125f;
-		[MMEnumCondition("FramerateMode", (int)FramerateModes.Manual)]
+		[EnumCondition("FramerateMode", (int)FramerateModes.Manual)]
 		public float ManualAnimatorSpeed = 2;
 
 		public float timet = 0;

@@ -109,7 +109,7 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			// we make sure it's the right kind of character
-			_character = collider.gameObject.MMGetComponentNoAlloc<Character>();
+			_character = collider.gameObject.GetComponentNoAlloc<Character>();
 			_characterDash3D = _character?.FindAbility<CharacterDash3D>();
 			if (_characterDash3D == null)
 			{
@@ -168,7 +168,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_characterHandleWeapon.CurrentWeapon != null)
 				{
-					_weaponAim3D = _characterHandleWeapon.CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim3D>();
+					_weaponAim3D = _characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim3D>();
 					if (_weaponAim3D != null)
 					{
 						_weaponAimControl = _weaponAim3D.AimControl;

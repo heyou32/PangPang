@@ -41,77 +41,77 @@ namespace MoreMountains.Tools
 		public MMDebugMenuItemTypes Type = MMDebugMenuItemTypes.Title;
 
 		// TITLE
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Title)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Title)]
 		public string TitleText = "Title text";
 
 		// TEXT
 		public enum MMDebugMenuItemTextTypes { Tiny, Small, Long }
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Text)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Text)]
 		public MMDebugMenuItemTextTypes TextType = MMDebugMenuItemTextTypes.Tiny;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Text)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Text)]
 		public string TextContents = "Lorem ipsum dolor sit amet";
 
 		// CHOICES 
 		public enum MMDebugMenuItemChoicesTypes { TwoChoices, ThreeChoices }
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public MMDebugMenuItemChoicesTypes ChoicesType = MMDebugMenuItemChoicesTypes.TwoChoices;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceOneText;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceOneEventName = "ChoiceOneEvent";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceTwoText;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceTwoEventName = "ChoiceTwoEvent";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceThreeText;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public string ChoiceThreeEventName = "ChoiceThreeEvent";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Choices)]
 		public int SelectedChoice = 0;
 
 		// VALUE
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
 		public string ValueLabel = "Value Label";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
 		public string ValueInitialValue = "255";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Value)]
 		public int ValueMMRadioReceiverChannel = 0;
 
 		// BUTTON
 		public enum MMDebugMenuItemButtonTypes { Border, Full }
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
 		public string ButtonText = "Button text";
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
 		public MMDebugMenuItemButtonTypes ButtonType = MMDebugMenuItemButtonTypes.Border;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Button)]
 		public string ButtonEventName = "Button";
 
 		// SPACER
 		public enum MMDebugMenuItemSpacerTypes { Small, Big }
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Spacer)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Spacer)]
 		public MMDebugMenuItemSpacerTypes SpacerType = MMDebugMenuItemSpacerTypes.Small;
 
 		// CHECKBOX
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
 		public string CheckboxText;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
 		public bool CheckboxInitialState = false;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Checkbox)]
 		public string CheckboxEventName = "CheckboxEventName";
 
 		// SLIDER
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public MMDebugMenuItemSlider.Modes SliderMode = MMDebugMenuItemSlider.Modes.Float;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public string SliderText;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public float SliderRemapZero = 0f;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public float SliderRemapOne = 1f;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public float SliderInitialValue = 0f;
-		[MMEnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
+		[EnumCondition("Type", (int)MMDebugMenuItemTypes.Slider)]
 		public string SliderEventName = "Slider";
 
 		[MMHidden]

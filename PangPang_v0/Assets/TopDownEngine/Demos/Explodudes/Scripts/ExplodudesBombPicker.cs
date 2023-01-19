@@ -24,7 +24,7 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="collider">Other.</param>
 		protected override void Pick(GameObject picker) 
 		{
-			_characterHandleWeapon = picker.MMGetComponentNoAlloc<CharacterHandleWeapon>();
+			_characterHandleWeapon = picker.GetComponentNoAlloc<CharacterHandleWeapon>();
 			if (_characterHandleWeapon == null)
 			{
 				return;

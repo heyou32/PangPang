@@ -153,7 +153,7 @@ namespace MoreMountains.Tools
 				_point.localPosition = _position;
 				_point.localScale = _scale;
 
-				_point.gameObject.MMGetComponentNoAlloc<MeshRenderer>().material = PlotPointMaterial;
+				_point.gameObject.GetComponentNoAlloc<MeshRenderer>().material = PlotPointMaterial;
 
 				_point.SetParent(transform, false);
 				_points[i] = _point;

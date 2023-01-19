@@ -125,7 +125,7 @@ namespace MoreMountains.TopDownEngine
 			base.HandleInput ();
 
 			// Crouch Detection : if the player is pressing "down" and if the character is grounded and the crouch action is enabled
-			if (_inputManager.CrouchButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)		
+			if (_inputManager.CrouchButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)		
 			{
 				Crouch();
 			}
@@ -268,8 +268,8 @@ namespace MoreMountains.TopDownEngine
 				if ( (!_controller.Grounded) 
 				     || ((_movement.CurrentState != CharacterStates.MovementStates.Crouching) 
 				         && (_movement.CurrentState != CharacterStates.MovementStates.Crawling)
-				         && (_inputManager.CrouchButton.State.CurrentState == MMInput.ButtonStates.Off) && (!ForcedCrouch))
-				     || ((_inputManager.CrouchButton.State.CurrentState == MMInput.ButtonStates.Off) && (!ForcedCrouch)))
+				         && (_inputManager.CrouchButton.State.CurrentState == InputClass.ButtonStates.Off) && (!ForcedCrouch))
+				     || ((_inputManager.CrouchButton.State.CurrentState == InputClass.ButtonStates.Off) && (!ForcedCrouch)))
 				{
 					// we cast a raycast above to see if we have room enough to go back to normal size
 					InATunnel = !_controller.CanGoBackToOriginalSize();

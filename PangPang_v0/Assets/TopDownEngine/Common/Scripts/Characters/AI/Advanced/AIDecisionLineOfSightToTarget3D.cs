@@ -53,7 +53,7 @@ namespace MoreMountains.TopDownEngine
 			_raycastOrigin = _collider.bounds.center + LineOfSightOffset / 2;
 			_directionToTarget = _brain.Target.transform.position - _raycastOrigin;
             
-			RaycastHit hit = MMDebug.Raycast3D(_raycastOrigin, _directionToTarget.normalized, _directionToTarget.magnitude, ObstacleLayerMask, Color.yellow, true);
+			RaycastHit hit = PhysicsDebug.Raycast3D(_raycastOrigin, _directionToTarget.normalized, _directionToTarget.magnitude, ObstacleLayerMask, Color.yellow, true);
 			if (hit.collider == null)
 			{
 				return true;

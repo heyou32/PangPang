@@ -44,15 +44,15 @@ namespace MoreMountains.Tools
 		public Modes Mode = Modes.BufferedNormalized;
 		public BeatValueModes BeatValueMode = BeatValueModes.Remapped;
 
-		[MMEnumCondition("Mode", (int)Modes.Raw, (int)Modes.Normalized, (int)Modes.BufferedRaw, (int)Modes.BufferedNormalized)]
+		[EnumCondition("Mode", (int)Modes.Raw, (int)Modes.Normalized, (int)Modes.BufferedRaw, (int)Modes.BufferedNormalized)]
 		public Color BeatColor = Color.cyan;
 		public int BandID = 0;
 		public float Threshold = 0.5f;
 		public float MinimumTimeBetweenBeats = 0.25f;
 
-		[MMEnumCondition("BeatValueMode", (int)BeatValueModes.Remapped)]
+		[EnumCondition("BeatValueMode", (int)BeatValueModes.Remapped)]
 		public float RemappedAttack = 0.05f;
-		[MMEnumCondition("BeatValueMode", (int)BeatValueModes.Remapped)]
+		[EnumCondition("BeatValueMode", (int)BeatValueModes.Remapped)]
 		public float RemappedDecay = 0.2f;
 
 		[MMReadOnly]
@@ -114,10 +114,10 @@ namespace MoreMountains.Tools
 		               "fast buffered band levels readjust.", MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
 		[MMReadOnlyWhenPlaying]
 		public Modes Mode = Modes.Global;
-		[MMEnumCondition("Mode", (int)Modes.AudioSource)]
+		[EnumCondition("Mode", (int)Modes.AudioSource)]
 		[MMReadOnlyWhenPlaying]
 		public AudioSource TargetAudioSource;
-		[MMEnumCondition("Mode", (int)Modes.Microphone)]
+		[EnumCondition("Mode", (int)Modes.Microphone)]
 		public int MicrophoneID = 0;
 
 		[Header("Sampling")]

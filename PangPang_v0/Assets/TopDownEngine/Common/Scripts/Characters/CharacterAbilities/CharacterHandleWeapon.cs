@@ -235,32 +235,32 @@ namespace MoreMountains.TopDownEngine
 				inputAuthorized = CurrentWeapon.InputAuthorized;
 			}
 			
-			if (inputAuthorized && ((_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) || (_inputManager.ShootAxis == MMInput.ButtonStates.ButtonDown)))
+			if (inputAuthorized && ((_inputManager.ShootButton.State.CurrentState == InputClass.ButtonStates.ButtonDown) || (_inputManager.ShootAxis == InputClass.ButtonStates.ButtonDown)))
 			{
 				ShootStart();
 			}
 
 			bool buttonPressed =
-				(_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed) ||
-				(_inputManager.ShootAxis == MMInput.ButtonStates.ButtonPressed); 
+				(_inputManager.ShootButton.State.CurrentState == InputClass.ButtonStates.ButtonPressed) ||
+				(_inputManager.ShootAxis == InputClass.ButtonStates.ButtonPressed); 
                 
 			if (inputAuthorized && ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && buttonPressed)
 			{
 				ShootStart();
 			}
             
-			if (_inputManager.ReloadButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.ReloadButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				Reload();
 			}
 
-			if (inputAuthorized && ((_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.ButtonUp) || (_inputManager.ShootAxis == MMInput.ButtonStates.ButtonUp)))
+			if (inputAuthorized && ((_inputManager.ShootButton.State.CurrentState == InputClass.ButtonStates.ButtonUp) || (_inputManager.ShootAxis == InputClass.ButtonStates.ButtonUp)))
 			{
 				ShootStop();
 			}
 
 			if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses)
-			    && ((_inputManager.ShootAxis == MMInput.ButtonStates.Off) && (_inputManager.ShootButton.State.CurrentState == MMInput.ButtonStates.Off))
+			    && ((_inputManager.ShootAxis == InputClass.ButtonStates.Off) && (_inputManager.ShootButton.State.CurrentState == InputClass.ButtonStates.Off))
 			    && !(UseSecondaryAxisThresholdToShoot && (_inputManager.SecondaryMovement.magnitude > _inputManager.Threshold.magnitude)))
 			{
 				CurrentWeapon.WeaponInputStop();
@@ -302,7 +302,9 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void ShootStart()
 		{
+			Debug.Log("ShootStart()");
 			// if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
+			// 사용하지 않거나, 플레이어가 죽었을 때는 아무것도 하지 않는다.
 			if (!AbilityAuthorized
 			    || (CurrentWeapon == null)
 			    || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal))
@@ -463,7 +465,7 @@ namespace MoreMountains.TopDownEngine
 			CurrentWeapon.SetOwner(_character, this);
 			CurrentWeapon.WeaponID = weaponID;
 			CurrentWeapon.FlipWeapon();
-			_weaponAim = CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim>();
+			_weaponAim = CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
 
 			HandleWeaponAim();
 

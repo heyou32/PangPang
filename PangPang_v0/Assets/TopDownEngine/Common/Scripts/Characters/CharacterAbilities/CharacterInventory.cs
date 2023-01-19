@@ -185,7 +185,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.SwitchWeaponButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				SwitchWeapon ();
 			}

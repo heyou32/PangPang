@@ -269,7 +269,7 @@ namespace MoreMountains.TopDownEngine
 		public virtual void SetOwner(GameObject newOwner)
 		{
 			_owner = newOwner;
-			DamageOnTouch damageOnTouch = this.gameObject.MMGetComponentNoAlloc<DamageOnTouch>();
+			DamageOnTouch damageOnTouch = this.gameObject.GetComponentNoAlloc<DamageOnTouch>();
 			if (damageOnTouch != null)
 			{
 				damageOnTouch.Owner = newOwner;

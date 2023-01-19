@@ -22,7 +22,7 @@ namespace MoreMountains.TopDownEngine
 		public float TimeScale = 0.5f;
 		/// the duration for which to keep the timescale changed
 		[Tooltip("the duration for which to keep the timescale changed")]
-		[MMEnumCondition("Mode", (int)Modes.OneTime)]
+		[EnumCondition("Mode", (int)Modes.OneTime)]
 		public float OneTimeDuration = 1f;
 		/// whether or not the timescale should get lerped
 		[Tooltip("whether or not the timescale should get lerped")]
@@ -46,11 +46,11 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.TimeControlButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				TimeControlStart();
 			}
-			if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
+			if (_inputManager.TimeControlButton.State.CurrentState == InputClass.ButtonStates.ButtonUp)
 			{
 				TimeControlStop();
 			}

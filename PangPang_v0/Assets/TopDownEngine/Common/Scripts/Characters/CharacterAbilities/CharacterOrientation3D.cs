@@ -286,7 +286,7 @@ namespace MoreMountains.TopDownEngine
 
 			_weaponRotationDirection = _rotationDirection;
 
-			MMDebug.DebugDrawArrow(this.transform.position, _rotationDirection, Color.red);
+			PhysicsDebug.DebugDrawArrow(this.transform.position, _rotationDirection, Color.red);
 
 			// if the rotation mode is instant, we simply rotate to face our direction
 			if (WeaponRotationSpeed == RotationSpeeds.Instant)

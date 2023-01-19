@@ -431,7 +431,7 @@ namespace MoreMountains.Tools
 			for (int i=0;i<PathElements.Count;i++)
 			{
 				// we draw a green point 
-				MMDebug.DrawGizmoPoint(PointPosition(i),0.2f,Color.green);
+				PhysicsDebug.DrawGizmoPoint(PointPosition(i),0.2f,Color.green);
 
 				// we draw a line towards the next point in the path
 				if ((i+1)<PathElements.Count)
@@ -450,8 +450,8 @@ namespace MoreMountains.Tools
 			// if the game is playing, we add a blue point to the destination, and a red point to the last visited point
 			if (Application.isPlaying)
 			{
-				MMDebug.DrawGizmoPoint(PointPosition(_currentPoint.Current), 0.2f, Color.blue);
-				MMDebug.DrawGizmoPoint(PointPosition(_previousPoint),0.2f,Color.red);
+				PhysicsDebug.DrawGizmoPoint(PointPosition(_currentPoint.Current), 0.2f, Color.blue);
+				PhysicsDebug.DrawGizmoPoint(PointPosition(_previousPoint),0.2f,Color.red);
 			}
 			#endif
 		}

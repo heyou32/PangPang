@@ -28,7 +28,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
             
-			if (_inputManager.SwitchCharacterButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.SwitchCharacterButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				SwapAbilityNodes();
 			}

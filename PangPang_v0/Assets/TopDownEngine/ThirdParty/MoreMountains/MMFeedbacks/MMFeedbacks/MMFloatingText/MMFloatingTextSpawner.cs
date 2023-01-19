@@ -47,13 +47,13 @@ namespace MoreMountains.Feedbacks
 		public MMChannelModes ChannelMode = MMChannelModes.Int;
 		/// the channel to listen to - has to match the one on the feedback
 		[Tooltip("the channel to listen to - has to match the one on the feedback")]
-		[MMEnumCondition("ChannelMode", (int)MMChannelModes.Int)]
+		[EnumCondition("ChannelMode", (int)MMChannelModes.Int)]
 		public int Channel = 0;
 		/// the MMChannel definition asset to use to listen for events. The feedbacks targeting this shaker will have to reference that same MMChannel definition to receive events - to create a MMChannel,
 		/// right click anywhere in your project (usually in a Data folder) and go MoreMountains > MMChannel, then name it with some unique name
 		[Tooltip("the MMChannel definition asset to use to listen for events. The feedbacks targeting this shaker will have to reference that same MMChannel definition to receive events - to create a MMChannel, " +
 		         "right click anywhere in your project (usually in a Data folder) and go MoreMountains > MMChannel, then name it with some unique name")]
-		[MMEnumCondition("ChannelMode", (int)MMChannelModes.MMChannel)]
+		[EnumCondition("ChannelMode", (int)MMChannelModes.MMChannel)]
 		public MMChannel MMChannelDefinition = null;
 		/// whether or not this spawner can spawn at this time
 		[Tooltip("whether or not this spawner can spawn at this time")]
@@ -163,7 +163,7 @@ namespace MoreMountains.Feedbacks
 		public AlignmentModes AlignmentMode = AlignmentModes.Fixed;
 		/// when in fixed mode, the direction in which to keep the spawned texts
 		[Tooltip("when in fixed mode, the direction in which to keep the spawned texts")]
-		[MMEnumCondition("AlignmentMode", (int)AlignmentModes.Fixed)]
+		[EnumCondition("AlignmentMode", (int)AlignmentModes.Fixed)]
 		public Vector3 FixedAlignment = Vector3.up;
 
 		[Header("Billboard")]
@@ -345,25 +345,25 @@ namespace MoreMountains.Feedbacks
 		/// </summary>
 		protected virtual void InstantiateMultiplePool()
 		{
-			GameObject newPooler = new GameObject();
-			SceneManager.MoveGameObjectToScene(newPooler, this.gameObject.scene);
-			newPooler.name = this.name + "_Pooler";
-			newPooler.transform.SetParent(this.transform);
-			MMMultipleObjectPooler multiplePooler = newPooler.AddComponent<MMMultipleObjectPooler>();
-			multiplePooler.Pool = new List<MMMultipleObjectPoolerObject>();
-			foreach (MMFloatingText obj in PooledMultipleMMFloatingText)
-			{
-				MMMultipleObjectPoolerObject item = new MMMultipleObjectPoolerObject();
-				item.GameObjectToPool = obj.gameObject;
-				item.PoolCanExpand = PoolCanExpand;
-				item.PoolSize = PoolSize;
-				item.Enabled = true;
-				multiplePooler.Pool.Add(item);
-			}
-			multiplePooler.NestWaitingPool = NestWaitingPool;
-			multiplePooler.MutualizeWaitingPools = MutualizeWaitingPools;
-			multiplePooler.FillObjectPool();
-			_pooler = multiplePooler;
+			//GameObject newPooler = new GameObject();
+			//SceneManager.MoveGameObjectToScene(newPooler, this.gameObject.scene);
+			//newPooler.name = this.name + "_Pooler";
+			//newPooler.transform.SetParent(this.transform);
+			//MMMultipleObjectPooler multiplePooler = newPooler.AddComponent<MMMultipleObjectPooler>();
+			//multiplePooler.Pool = new List<MMMultipleObjectPoolerObject>();
+			//foreach (MMFloatingText obj in PooledMultipleMMFloatingText)
+			//{
+			//	MMMultipleObjectPoolerObject item = new MMMultipleObjectPoolerObject();
+			//	item.GameObjectToPool = obj.gameObject;
+			//	item.PoolCanExpand = PoolCanExpand;
+			//	item.PoolSize = PoolSize;
+			//	item.Enabled = true;
+			//	multiplePooler.Pool.Add(item);
+			//}
+			//multiplePooler.NestWaitingPool = NestWaitingPool;
+			//multiplePooler.MutualizeWaitingPools = MutualizeWaitingPools;
+			//multiplePooler.FillObjectPool();
+			//_pooler = multiplePooler;
 		}
 
 		/// <summary>
@@ -440,12 +440,12 @@ namespace MoreMountains.Feedbacks
             
 			// we activate the object
 			nextGameObject.gameObject.SetActive(true);
-			nextGameObject.gameObject.MMGetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
+			nextGameObject.gameObject.GetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
 
 			// we position the object
 			nextGameObject.transform.position = this.transform.position + _spawnOffset;
 
-			_floatingText = nextGameObject.MMGetComponentNoAlloc<MMFloatingText>();
+			_floatingText = nextGameObject.GetComponentNoAlloc<MMFloatingText>();
 			_floatingText.SetUseUnscaledTime(UseUnscaledTime, true);
 			_floatingText.ResetPosition();
 			_floatingText.SetProperties(value, _lifetime, _direction, AnimateMovement, 

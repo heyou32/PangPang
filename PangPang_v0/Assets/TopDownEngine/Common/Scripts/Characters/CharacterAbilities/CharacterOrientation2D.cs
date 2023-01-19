@@ -20,7 +20,7 @@ namespace MoreMountains.TopDownEngine
 		/// the facing mode for this character
 		public FacingModes FacingMode = FacingModes.None;
 
-		[MMEnumCondition("FacingMode", (int)FacingModes.WeaponDirection, (int)FacingModes.Both)]
+		[EnumCondition("FacingMode", (int)FacingModes.WeaponDirection, (int)FacingModes.Both)]
 		public FacingBases FacingBase = FacingBases.WeaponAngle;
         
 		[MMInformation("You can also decide if the character must automatically flip when going backwards or not. Additionnally, if you're not using sprites, you can define here how the character's model's localscale will be affected by flipping. By default it flips on the x axis, but you can change that to fit your model.", MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]

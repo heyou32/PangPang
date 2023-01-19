@@ -26,7 +26,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected override void Pick(GameObject picker)
 		{
-			Character character = _collidingObject.gameObject.MMGetComponentNoAlloc<Character>();
+			Character character = _collidingObject.gameObject.GetComponentNoAlloc<Character>();
 
 			if (character == null)
 			{

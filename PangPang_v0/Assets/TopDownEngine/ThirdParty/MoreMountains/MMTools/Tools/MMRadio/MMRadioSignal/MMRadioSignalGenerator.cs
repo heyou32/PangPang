@@ -132,10 +132,10 @@ namespace MoreMountains.Tools
 		/// the type of this signal
 		public MMSignal.SignalType SignalType = MMSignal.SignalType.Sine;
 		/// if the type is animation curve, the curve to consider
-		[MMEnumCondition("SignalType", (int)MMSignal.SignalType.AnimationCurve)]
+		[EnumCondition("SignalType", (int)MMSignal.SignalType.AnimationCurve)]
 		public AnimationCurve Curve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
 		/// if the type is MMTween, the tween to consider
-		[MMEnumCondition("SignalType", (int)MMSignal.SignalType.MMTween)]
+		[EnumCondition("SignalType", (int)MMSignal.SignalType.MMTween)]
 		public MMTween.MMTweenCurve TweenCurve = MMTween.MMTweenCurve.EaseInOutQuartic;
 		/// the selected mode (multiply or additive)
 		public GeneratorItemModes Mode = GeneratorItemModes.Multiply;

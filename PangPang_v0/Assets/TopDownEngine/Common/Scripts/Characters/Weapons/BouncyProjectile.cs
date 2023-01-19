@@ -88,13 +88,13 @@ namespace MoreMountains.TopDownEngine
 
 			if (BoundsBasedOn == WaysToDetermineBounds.Collider)
 			{
-				RaycastHit hit = MMDebug.Raycast3D(this.transform.position, Direction.normalized, BounceRaycastLength, BounceLayers, MMColors.DarkOrange, true);
+				RaycastHit hit = PhysicsDebug.Raycast3D(this.transform.position, Direction.normalized, BounceRaycastLength, BounceLayers, MMColors.DarkOrange, true);
 				EvaluateHit3D(hit);
 			}
 
 			if (BoundsBasedOn == WaysToDetermineBounds.Collider2D)
 			{
-				RaycastHit2D hit = MMDebug.RayCast(this.transform.position, Direction.normalized, BounceRaycastLength, BounceLayers, MMColors.DarkOrange, true);
+				RaycastHit2D hit = PhysicsDebug.RayCast(this.transform.position, Direction.normalized, BounceRaycastLength, BounceLayers, MMColors.DarkOrange, true);
 				EvaluateHit2D(hit);
 			}
 		}

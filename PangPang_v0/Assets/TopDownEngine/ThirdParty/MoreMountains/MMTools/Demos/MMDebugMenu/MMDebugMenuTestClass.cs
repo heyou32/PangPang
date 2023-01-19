@@ -28,7 +28,7 @@ namespace MoreMountains.Tools
 		void Update()
 		{
 			float test = (Mathf.Sin(Time.time) + 2) * multiplier;
-			MMDebug.DebugOnScreen(Label, test);
+			PhysicsDebug.DebugOnScreen(Label, test);
 		}
 	}
 }

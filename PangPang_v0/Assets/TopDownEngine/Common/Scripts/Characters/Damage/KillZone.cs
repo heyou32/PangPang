@@ -88,7 +88,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();
+			_colliderHealth = collider.gameObject.GetComponentNoAlloc<Health>();
 
 			// if what we're colliding with is damageable
 			if (_colliderHealth != null)

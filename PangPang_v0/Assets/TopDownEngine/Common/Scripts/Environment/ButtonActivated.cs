@@ -87,11 +87,11 @@ namespace MoreMountains.TopDownEngine
 			public InputAction InputSystemAction;
 		#else
 			/// the selected button string used to activate this zone
-			[MMEnumCondition("InputType", (int)InputTypes.Button)]
+			[EnumCondition("InputType", (int)InputTypes.Button)]
 			[Tooltip("the selected button string used to activate this zone")]
 			public string InputButton = "Interact";
 			/// the key used to activate this zone
-			[MMEnumCondition("InputType", (int)InputTypes.Key)]
+			[EnumCondition("InputType", (int)InputTypes.Key)]
 			[Tooltip("the key used to activate this zone")]
 			public KeyCode InputKey = KeyCode.Space;
 		#endif
@@ -368,7 +368,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				_buttonPrompt = (ButtonPrompt)Instantiate(ButtonPromptPrefab);
 				_buttonPrompt.Initialization();
-				_buttonPromptAnimator = _buttonPrompt.gameObject.MMGetComponentNoAlloc<Animator>();
+				_buttonPromptAnimator = _buttonPrompt.gameObject.GetComponentNoAlloc<Animator>();
 			}
 			
 			if (_collider != null)
@@ -481,7 +481,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (collider != null)
 				{
-					TopDownController controller = collider.gameObject.MMGetComponentNoAlloc<TopDownController>();
+					TopDownController controller = collider.gameObject.GetComponentNoAlloc<TopDownController>();
 					if (controller != null)
 					{
 						if (!controller.Grounded)
@@ -503,7 +503,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (ShouldUpdateState)
 			{
-				_characterButtonActivation = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
+				_characterButtonActivation = collider.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
 				if (_characterButtonActivation != null)
 				{
 					_characterButtonActivation.InButtonActivatedZone = true;
@@ -549,7 +549,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (ShouldUpdateState)
 			{
-				_characterButtonActivation = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
+				_characterButtonActivation = collider.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
 				if (_characterButtonActivation != null)
 				{
 					_characterButtonActivation.InButtonActivatedZone=false;
@@ -638,7 +638,7 @@ namespace MoreMountains.TopDownEngine
 				return false;
 			}
 			
-			Character character = collider.gameObject.MMGetComponentNoAlloc<Character>();
+			Character character = collider.gameObject.GetComponentNoAlloc<Character>();
 
 			switch (ButtonActivatedRequirement)
 			{
@@ -650,14 +650,14 @@ namespace MoreMountains.TopDownEngine
 					break;
 
 				case ButtonActivatedRequirements.ButtonActivator:
-					if (collider.gameObject.MMGetComponentNoAlloc<ButtonActivator>() == null)
+					if (collider.gameObject.GetComponentNoAlloc<ButtonActivator>() == null)
 					{
 						return false;
 					}
 					break;
 
 				case ButtonActivatedRequirements.Either:
-					if ((character == null) && (collider.gameObject.MMGetComponentNoAlloc<ButtonActivator>() == null))
+					if ((character == null) && (collider.gameObject.GetComponentNoAlloc<ButtonActivator>() == null))
 					{
 						return false;
 					}
@@ -678,7 +678,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (RequiresButtonActivationAbility)
 			{
-				CharacterButtonActivation characterButtonActivation = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
+				CharacterButtonActivation characterButtonActivation = collider.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterButtonActivation>();
 				// we check that the object colliding with the water is actually a TopDown controller and a character
 				if (characterButtonActivation==null)
 				{

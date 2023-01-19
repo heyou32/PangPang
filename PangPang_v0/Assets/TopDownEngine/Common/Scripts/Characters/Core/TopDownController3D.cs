@@ -575,12 +575,12 @@ namespace MoreMountains.TopDownEngine
 		protected virtual void OnTriggerEnter(Collider other)
 		{
 			// on trigger enter, if we're colliding with a moving platform, we push ourselves in the opposite direction
-			if (other.gameObject.MMGetComponentNoAlloc<MovingPlatform3D>() != null)
+			if (other.gameObject.GetComponentNoAlloc<MovingPlatform3D>() != null)
 			{
 				if (this.transform.position.y < other.transform.position.y)
 				{
 					_onTriggerEnterPushbackDirection = (this.transform.position - other.transform.position).normalized;
-					this.Impact(_onTriggerEnterPushbackDirection.normalized, other.gameObject.MMGetComponentNoAlloc<MovingPlatform3D>().PushForce);
+					this.Impact(_onTriggerEnterPushbackDirection.normalized, other.gameObject.GetComponentNoAlloc<MovingPlatform3D>().PushForce);
 				}
 			}
 		}
@@ -666,7 +666,7 @@ namespace MoreMountains.TopDownEngine
 			// we cast two rays above our character to check for obstacles. If we didn't hit anything, we can go back to original size, otherwise we can't
 			_originalSizeRaycastOrigin = ColliderTop + transform.up * _smallValue;
 
-			_canGoBackHeadCheck = MMDebug.Raycast3D(_originalSizeRaycastOrigin, transform.up, headCheckDistance, ObstaclesLayerMask, Color.cyan, true);
+			_canGoBackHeadCheck = PhysicsDebug.Raycast3D(_originalSizeRaycastOrigin, transform.up, headCheckDistance, ObstaclesLayerMask, Color.cyan, true);
 			if (_canGoBackHeadCheck.collider != null)
 			{
 				return false;
@@ -774,16 +774,16 @@ namespace MoreMountains.TopDownEngine
             
 			CollidingWithCardinalObstacle = false;
 			// right
-			_cardinalRaycast = MMDebug.Raycast3D(this.transform.position + offset, Vector3.right, distance, ObstaclesLayerMask, Color.yellow, true);
+			_cardinalRaycast = PhysicsDebug.Raycast3D(this.transform.position + offset, Vector3.right, distance, ObstaclesLayerMask, Color.yellow, true);
 			if (_cardinalRaycast.collider != null) { DetectedObstacleRight = _cardinalRaycast.collider.gameObject; CollidingWithCardinalObstacle = true; } else { DetectedObstacleRight = null; }
 			// left
-			_cardinalRaycast = MMDebug.Raycast3D(this.transform.position + offset, Vector3.left, distance, ObstaclesLayerMask, Color.yellow, true);
+			_cardinalRaycast = PhysicsDebug.Raycast3D(this.transform.position + offset, Vector3.left, distance, ObstaclesLayerMask, Color.yellow, true);
 			if (_cardinalRaycast.collider != null) { DetectedObstacleLeft = _cardinalRaycast.collider.gameObject; CollidingWithCardinalObstacle = true; } else { DetectedObstacleLeft = null; }
 			// up
-			_cardinalRaycast = MMDebug.Raycast3D(this.transform.position + offset, Vector3.forward, distance, ObstaclesLayerMask, Color.yellow, true);
+			_cardinalRaycast = PhysicsDebug.Raycast3D(this.transform.position + offset, Vector3.forward, distance, ObstaclesLayerMask, Color.yellow, true);
 			if (_cardinalRaycast.collider != null) { DetectedObstacleUp = _cardinalRaycast.collider.gameObject; CollidingWithCardinalObstacle = true; } else { DetectedObstacleUp = null; }
 			// down
-			_cardinalRaycast = MMDebug.Raycast3D(this.transform.position + offset, Vector3.back, distance, ObstaclesLayerMask, Color.yellow, true);
+			_cardinalRaycast = PhysicsDebug.Raycast3D(this.transform.position + offset, Vector3.back, distance, ObstaclesLayerMask, Color.yellow, true);
 			if (_cardinalRaycast.collider != null) { DetectedObstacleDown = _cardinalRaycast.collider.gameObject; CollidingWithCardinalObstacle = true; } else { DetectedObstacleDown = null; }
 		}
 

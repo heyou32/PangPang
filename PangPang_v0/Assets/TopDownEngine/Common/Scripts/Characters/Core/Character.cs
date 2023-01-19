@@ -152,11 +152,11 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Initialization()
 		{            
-			if (this.gameObject.MMGetComponentNoAlloc<TopDownController2D>() != null)
+			if (this.gameObject.GetComponentNoAlloc<TopDownController2D>() != null)
 			{
 				CharacterDimension = CharacterDimensions.Type2D;
 			}
-			if (this.gameObject.MMGetComponentNoAlloc<TopDownController3D>() != null)
+			if (this.gameObject.GetComponentNoAlloc<TopDownController3D>() != null)
 			{
 				CharacterDimension = CharacterDimensions.Type3D;
 			}
@@ -205,9 +205,9 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (OptimizeForMobile && LinkedInputManager.IsMobile)
 				{
-					if (this.gameObject.MMGetComponentNoAlloc<MMConeOfVision2D>() != null)
+					if (this.gameObject.GetComponentNoAlloc<MMConeOfVision2D>() != null)
 					{
-						this.gameObject.MMGetComponentNoAlloc<MMConeOfVision2D>().enabled = false;
+						this.gameObject.GetComponentNoAlloc<MMConeOfVision2D>().enabled = false;
 					}
 				}
 			}            
@@ -556,14 +556,14 @@ namespace MoreMountains.TopDownEngine
 			// we raise it from the dead (if it was dead)
 			ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
 			// we re-enable its 2D collider
-			if (this.gameObject.MMGetComponentNoAlloc<Collider2D>() != null)
+			if (this.gameObject.GetComponentNoAlloc<Collider2D>() != null)
 			{
-				this.gameObject.MMGetComponentNoAlloc<Collider2D>().enabled = true;
+				this.gameObject.GetComponentNoAlloc<Collider2D>().enabled = true;
 			}
 			// we re-enable its 3D collider
-			if (this.gameObject.MMGetComponentNoAlloc<Collider>() != null)
+			if (this.gameObject.GetComponentNoAlloc<Collider>() != null)
 			{
-				this.gameObject.MMGetComponentNoAlloc<Collider>().enabled = true;
+				this.gameObject.GetComponentNoAlloc<Collider>().enabled = true;
 			}
 
 			// we make it handle collisions again
@@ -572,13 +572,13 @@ namespace MoreMountains.TopDownEngine
 			_controller.Reset();
 
 			// we kill all potential velocity
-			if (this.gameObject.MMGetComponentNoAlloc<Rigidbody>() != null)
+			if (this.gameObject.GetComponentNoAlloc<Rigidbody>() != null)
 			{
-				this.gameObject.MMGetComponentNoAlloc<Rigidbody>().velocity = Vector3.zero;
+				this.gameObject.GetComponentNoAlloc<Rigidbody>().velocity = Vector3.zero;
 			}
-			if (this.gameObject.MMGetComponentNoAlloc<Rigidbody2D>() != null)
+			if (this.gameObject.GetComponentNoAlloc<Rigidbody2D>() != null)
 			{
-				this.gameObject.MMGetComponentNoAlloc<Rigidbody2D>().velocity = Vector3.zero;
+				this.gameObject.GetComponentNoAlloc<Rigidbody2D>().velocity = Vector3.zero;
 			}
 
 			Reset();

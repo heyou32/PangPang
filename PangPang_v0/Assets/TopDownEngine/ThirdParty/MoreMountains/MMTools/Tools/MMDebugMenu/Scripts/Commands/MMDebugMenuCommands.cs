@@ -21,7 +21,7 @@ namespace MoreMountains.Tools
 		public static void Now()
 		{
 			string message = "Time.time is " + Time.time;
-			MMDebug.DebugLogTime(message, "", 3, true);
+			PhysicsDebug.DebugLogTime(message, "", 3, true);
 		}
 
 		/// <summary>
@@ -30,7 +30,7 @@ namespace MoreMountains.Tools
 		[MMDebugLogCommand]
 		public static void Clear()
 		{
-			MMDebug.DebugLogClear();
+			PhysicsDebug.DebugLogClear();
 		}
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace MoreMountains.Tools
 		[MMDebugLogCommand]
 		public static void Sysinfo()
 		{
-			MMDebug.DebugLogTime(MMDebug.GetSystemInfo());
+			PhysicsDebug.DebugLogTime(PhysicsDebug.GetSystemInfo());
 		}
 
 		/// <summary>
@@ -87,11 +87,11 @@ namespace MoreMountains.Tools
 		public static void Help()
 		{
 			string result = "LIST OF COMMANDS";
-			foreach (MethodInfo method in MMDebug.Commands.OrderBy(m => m.Name))
+			foreach (MethodInfo method in PhysicsDebug.Commands.OrderBy(m => m.Name))
 			{
 				result += "\n- <color=#FFFFFF>"+method.Name+"</color>";
 			}
-			MMDebug.DebugLogTime(result, "#FFC400", 3, true);
+			PhysicsDebug.DebugLogTime(result, "#FFC400", 3, true);
 		}
 
 		/// <summary>
@@ -117,7 +117,7 @@ namespace MoreMountains.Tools
 			if (int.TryParse(args[1], out int vSyncCount))
 			{
 				QualitySettings.vSyncCount = vSyncCount;
-				MMDebug.DebugLogTime("VSyncCount set to " + vSyncCount, "#FFC400", 3, true);
+				PhysicsDebug.DebugLogTime("VSyncCount set to " + vSyncCount, "#FFC400", 3, true);
 			}
 		}
 
@@ -132,7 +132,7 @@ namespace MoreMountains.Tools
 			if (int.TryParse(args[1], out int framerate))
 			{
 				Application.targetFrameRate = framerate;
-				MMDebug.DebugLogTime("Framerate set to " + framerate, "#FFC400", 3, true);
+				PhysicsDebug.DebugLogTime("Framerate set to " + framerate, "#FFC400", 3, true);
 			}
 		}
 
@@ -147,7 +147,7 @@ namespace MoreMountains.Tools
 			if (float.TryParse(args[1], System.Globalization.NumberStyles.Float, CultureInfo.InvariantCulture, out float timescale))
 			{
 				Time.timeScale = timescale;
-				MMDebug.DebugLogTime("Timescale set to " + timescale, "#FFC400", 3, true);
+				PhysicsDebug.DebugLogTime("Timescale set to " + timescale, "#FFC400", 3, true);
 			}
 		}
 
@@ -165,7 +165,7 @@ namespace MoreMountains.Tools
 				string result;
 				int biggest = (i1 >= i2) ? i1 : i2;
 				result = biggest + " is the biggest number";                
-				MMDebug.DebugLogTime(result, "#FFC400", 3, true);
+				PhysicsDebug.DebugLogTime(result, "#FFC400", 3, true);
 			}
 		}
         

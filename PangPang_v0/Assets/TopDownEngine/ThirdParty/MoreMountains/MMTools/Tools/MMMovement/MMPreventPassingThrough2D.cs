@@ -90,7 +90,7 @@ namespace MoreMountains.Tools
 				// we cast a ray backwards to see if we should have hit something
 				if (Mode == Modes.Raycast)
 				{
-					_hitInfo = MMDebug.RayCast(_positionLastFrame, _lastMovement.normalized, movementMagnitude, ObstaclesLayerMask, Color.blue, true);	
+					_hitInfo = PhysicsDebug.RayCast(_positionLastFrame, _lastMovement.normalized, movementMagnitude, ObstaclesLayerMask, Color.blue, true);	
 				}
 				else
 				{

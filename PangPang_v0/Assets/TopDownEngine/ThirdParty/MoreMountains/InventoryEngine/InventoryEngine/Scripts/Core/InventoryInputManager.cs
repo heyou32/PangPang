@@ -211,7 +211,7 @@ namespace MoreMountains.InventoryEngine
 			{
 				return;
 			}
-			_currentInventorySlot = _currentSelection.gameObject.MMGetComponentNoAlloc<InventorySlot>();
+			_currentInventorySlot = _currentSelection.gameObject.GetComponentNoAlloc<InventorySlot>();
 			if (_currentInventorySlot != null)
 			{
 				CurrentlySelectedInventorySlot = _currentInventorySlot;

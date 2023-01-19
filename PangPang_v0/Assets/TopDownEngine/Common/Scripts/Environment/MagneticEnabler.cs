@@ -95,7 +95,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			_magnetic = colliding.MMGetComponentNoAlloc<Magnetic>();
+			_magnetic = colliding.GetComponentNoAlloc<Magnetic>();
 			if (_magnetic == null)
 			{
 				return;

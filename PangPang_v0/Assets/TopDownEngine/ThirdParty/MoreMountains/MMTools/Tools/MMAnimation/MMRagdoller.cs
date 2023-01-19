@@ -137,7 +137,7 @@ namespace MoreMountains.Tools
 			_rigidbodiesTempList = new List<Component>();
 			foreach (Component rigidbody in _rigidbodies)
 			{
-				if (rigidbody.gameObject.MMGetComponentNoAlloc<MMRagdollerIgnore>() == null)
+				if (rigidbody.gameObject.GetComponentNoAlloc<MMRagdollerIgnore>() == null)
 				{
 					_rigidbodiesTempList.Add(rigidbody);
 				}

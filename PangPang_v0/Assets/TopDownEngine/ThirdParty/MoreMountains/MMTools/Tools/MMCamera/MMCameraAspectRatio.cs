@@ -23,7 +23,7 @@ namespace MoreMountains.Tools
 		public Modes Mode = Modes.Fixed;
 		/// in fixed mode, the ratio to apply to the camera
 		[Tooltip("in fixed mode, the ratio to apply to the camera")]
-		[MMEnumCondition("Mode", (int)Modes.Fixed)]
+		[EnumCondition("Mode", (int)Modes.Fixed)]
 		public Vector2 FixedAspectRatio = Vector2.zero;
 
 		[Header("Automation")]

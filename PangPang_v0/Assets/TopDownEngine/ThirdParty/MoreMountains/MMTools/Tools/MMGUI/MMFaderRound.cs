@@ -17,7 +17,7 @@ namespace MoreMountains.Tools
 
 		[Header("Bindings")]
 		public CameraModes CameraMode = CameraModes.Main;
-		[MMEnumCondition("CameraMode",(int)CameraModes.Override)]
+		[EnumCondition("CameraMode",(int)CameraModes.Override)]
 		/// the camera to pick the position from (usually the "regular" game camera)
 		public Camera TargetCamera;
 		/// the background to fade 

@@ -13,7 +13,7 @@ namespace MoreMountains.Tools
 	/// Usage :  [MMEnumCondition("rotationMode", (int)RotationMode.LookAtTarget, (int)RotationMode.RotateToAngles)]
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Struct, Inherited = true)]
-	public class MMEnumConditionAttribute : PropertyAttribute
+	public class EnumConditionAttribute : PropertyAttribute
 	{
 		public string ConditionEnum = "";
 		public bool Hidden = false;
@@ -24,7 +24,7 @@ namespace MoreMountains.Tools
 			return bitArray.Get(enumValue);
 		}
 
-		public MMEnumConditionAttribute(string conditionBoolean, params int[] enumValues)
+		public EnumConditionAttribute(string conditionBoolean, params int[] enumValues)
 		{
 			this.ConditionEnum = conditionBoolean;
 			this.Hidden = true;

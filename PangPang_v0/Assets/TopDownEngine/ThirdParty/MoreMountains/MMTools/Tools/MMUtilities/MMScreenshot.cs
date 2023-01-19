@@ -31,17 +31,17 @@ namespace MoreMountains.Tools
 		#endif
 
 		/// the size by which to multiply the game view when taking the screenshot
-		[MMEnumCondition("Method", (int)Methods.ScreenCapture)]        
+		[EnumCondition("Method", (int)Methods.ScreenCapture)]        
 		public int GameViewSizeMultiplier = 3;
 
 		/// the camera to use to take the screenshot with
-		[MMEnumCondition("Method", (int)Methods.RenderTexture)]        
+		[EnumCondition("Method", (int)Methods.RenderTexture)]        
 		public Camera TargetCamera;
 		/// the width of the desired screenshot
-		[MMEnumCondition("Method", (int)Methods.RenderTexture)]
+		[EnumCondition("Method", (int)Methods.RenderTexture)]
 		public int ResolutionWidth;
 		/// the height of the desired screenshot
-		[MMEnumCondition("Method", (int)Methods.RenderTexture)]
+		[EnumCondition("Method", (int)Methods.RenderTexture)]
 		public int ResolutionHeight;
 
 		[Header("Controls")]

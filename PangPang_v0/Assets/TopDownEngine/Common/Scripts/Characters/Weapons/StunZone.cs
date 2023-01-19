@@ -22,7 +22,7 @@ namespace MoreMountains.TopDownEngine
 		public StunModes StunMode = StunModes.ForDuration;
 		/// if in ForDuration mode, the duration of the stun in seconds
 		[Tooltip("if in ForDuration mode, the duration of the stun in seconds")]
-		[MMEnumCondition("StunMode", (int)StunModes.ForDuration)]
+		[EnumCondition("StunMode", (int)StunModes.ForDuration)]
 		public float StunDuration = 2f;
 		/// whether or not to disable the zone after the stun has happened
 		[Tooltip("whether or not to disable the zone after the stun has happened")]

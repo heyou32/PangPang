@@ -39,7 +39,7 @@ namespace MoreMountains.Feedbacks
 		public MaterialPropertyTypes MaterialPropertyType = MaterialPropertyTypes.Main;
 		/// the property name, for example _MainTex_ST, or _MainTex if you don't have UseMaterialPropertyBlocks set to true
 		[Tooltip("the property name, for example _MainTex_ST, or _MainTex if you don't have UseMaterialPropertyBlocks set to true")]
-		[MMEnumCondition("MaterialPropertyType", (int)MaterialPropertyTypes.TextureID)]
+		[EnumCondition("MaterialPropertyType", (int)MaterialPropertyTypes.TextureID)]
 		public string MaterialPropertyName = "_MainTex_ST";
 		/// whether the feedback should affect the material instantly or over a period of time
 		[Tooltip("whether the feedback should affect the material instantly or over a period of time")]

@@ -59,7 +59,7 @@ namespace MoreMountains.TopDownEngine
 				switch (ButtonActivatedZone.InputType)
 				{
 					case ButtonActivated.InputTypes.Default:
-						buttonPressed = (_inputManager.InteractButton.State.CurrentState == MMInput.ButtonStates.ButtonDown);
+						buttonPressed = (_inputManager.InteractButton.State.CurrentState == InputClass.ButtonStates.ButtonDown);
 						break;
 					#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 						case ButtonActivated.InputTypes.Button:

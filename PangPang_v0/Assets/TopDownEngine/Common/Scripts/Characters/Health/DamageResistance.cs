@@ -27,7 +27,7 @@ namespace MoreMountains.TopDownEngine
 		public DamageTypeModes DamageTypeMode = DamageTypeModes.BaseDamage;
 		/// In TypedDamage mode, the type of damage this resistance will interact with
 		[Tooltip("In TypedDamage mode, the type of damage this resistance will interact with")]
-		[MMEnumCondition("DamageTypeMode", (int)DamageTypeModes.TypedDamage)]
+		[EnumCondition("DamageTypeMode", (int)DamageTypeModes.TypedDamage)]
 		public DamageType TypeResistance;
 		/// the way to reduce (or increase) received damage. Multiplier will multiply incoming damage by a multiplier, flat will subtract a constant value from incoming damage. 
 		[Tooltip("the way to reduce (or increase) received damage. Multiplier will multiply incoming damage by a multiplier, flat will subtract a constant value from incoming damage.")]
@@ -36,11 +36,11 @@ namespace MoreMountains.TopDownEngine
 		[Header("Damage Modifiers")]
 		/// In multiplier mode, the multiplier to apply to incoming damage. 0.5 will reduce it in half, while a value of 2 will create a weakness to the specified damage type, and damages will double.
 		[Tooltip("In multiplier mode, the multiplier to apply to incoming damage. 0.5 will reduce it in half, while a value of 2 will create a weakness to the specified damage type, and damages will double.")]
-		[MMEnumCondition("DamageModifierMode", (int)DamageModifierModes.Multiplier)]
+		[EnumCondition("DamageModifierMode", (int)DamageModifierModes.Multiplier)]
 		public float DamageMultiplier = 0.25f;
 		/// In flat mode, the amount of damage to subtract every time that type of damage is received
 		[Tooltip("In flat mode, the amount of damage to subtract every time that type of damage is received")]
-		[MMEnumCondition("DamageModifierMode", (int)DamageModifierModes.Flat)]
+		[EnumCondition("DamageModifierMode", (int)DamageModifierModes.Flat)]
 		public float FlatDamageReduction = 10f;
 		/// whether or not incoming damage of the specified type should be clamped between a min and a max
 		[Tooltip("whether or not incoming damage of the specified type should be clamped between a min and a max")] 

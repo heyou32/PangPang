@@ -213,9 +213,9 @@ namespace MoreMountains.InventoryEngine
 			}
 
 			// if we also have a sound player component, we set it up too
-			if (this.gameObject.MMGetComponentNoAlloc<InventorySoundPlayer>() != null)
+			if (this.gameObject.GetComponentNoAlloc<InventorySoundPlayer>() != null)
 			{
-				this.gameObject.MMGetComponentNoAlloc<InventorySoundPlayer> ().SetupInventorySoundPlayer ();
+				this.gameObject.GetComponentNoAlloc<InventorySoundPlayer> ().SetupInventorySoundPlayer ();
 			}
 
 			InitializeSprites();
@@ -534,7 +534,7 @@ namespace MoreMountains.InventoryEngine
 				newSlot.AddComponent<RectTransform>();
 
 				newSlot.AddComponent<Image> ();
-				newSlot.MMGetComponentNoAlloc<Image> ().raycastTarget = true;
+				newSlot.GetComponentNoAlloc<Image> ().raycastTarget = true;
 
 				_slotPrefab = newSlot.AddComponent<InventorySlot> ();
 				_slotPrefab.transition = Selectable.Transition.SpriteSwap;
@@ -546,10 +546,10 @@ namespace MoreMountains.InventoryEngine
 				_slotPrefab.interactable = true;
 
 				newSlot.AddComponent<CanvasGroup> ();
-				newSlot.MMGetComponentNoAlloc<CanvasGroup> ().alpha = 1;
-				newSlot.MMGetComponentNoAlloc<CanvasGroup> ().interactable = true;
-				newSlot.MMGetComponentNoAlloc<CanvasGroup> ().blocksRaycasts = true;
-				newSlot.MMGetComponentNoAlloc<CanvasGroup> ().ignoreParentGroups = false;
+				newSlot.GetComponentNoAlloc<CanvasGroup> ().alpha = 1;
+				newSlot.GetComponentNoAlloc<CanvasGroup> ().interactable = true;
+				newSlot.GetComponentNoAlloc<CanvasGroup> ().blocksRaycasts = true;
+				newSlot.GetComponentNoAlloc<CanvasGroup> ().ignoreParentGroups = false;
 				
 				// we add the icon
 				GameObject itemIcon = new GameObject("Slot Icon", typeof(RectTransform));

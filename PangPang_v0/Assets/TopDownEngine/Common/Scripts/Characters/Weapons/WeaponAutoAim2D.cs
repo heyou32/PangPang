@@ -83,7 +83,7 @@ namespace MoreMountains.TopDownEngine
 			// we return the first unobscured target
 			foreach (Transform t in _potentialTargets)
 			{
-				_boxcastDirection = (Vector2)(t.gameObject.MMGetComponentNoAlloc<Collider2D>().bounds.center - _raycastOrigin);
+				_boxcastDirection = (Vector2)(t.gameObject.GetComponentNoAlloc<Collider2D>().bounds.center - _raycastOrigin);
                 
 				_hit = Physics2D.BoxCast(_raycastOrigin, LineOfFireBoxcastSize, 0f, _boxcastDirection.normalized, _boxcastDirection.magnitude, ObstacleMask); 
                 

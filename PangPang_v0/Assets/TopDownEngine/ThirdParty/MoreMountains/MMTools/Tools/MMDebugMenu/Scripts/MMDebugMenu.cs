@@ -499,7 +499,7 @@ namespace MoreMountains.Tools
 		/// <param name="type"></param>
 		protected virtual void CaptureConsoleLog(string logString, string stackTrace, LogType type)
 		{
-			MMDebug.LogDebugToConsole(logString + " (" + type + ")", "#00FFFF", 3, false);
+			PhysicsDebug.LogDebugToConsole(logString + " (" + type + ")", "#00FFFF", 3, false);
 		}
      
 		/// <summary>

@@ -110,7 +110,7 @@ namespace MoreMountains.TopDownEngine
 		protected bool _perfectTile = false;                
 		protected Vector3 _inputMovement;
 		protected Vector3 _endWorldPosition;
-		protected bool _movingToNextGridUnit = false;
+		protected bool _movingToNextGrid = false;
 		protected bool _stopBuffered = false;        
 		protected int _lastBufferInGridUnits;
 		protected bool _agentMoving;
@@ -215,7 +215,7 @@ namespace MoreMountains.TopDownEngine
 		{
 			base.Initialization ();
 			DimensionMode = DimensionModes.ThreeD;
-			if (_controller.gameObject.MMGetComponentNoAlloc<TopDownController2D>() != null)
+			if (_controller.gameObject.GetComponentNoAlloc<TopDownController2D>() != null)
 			{
 				DimensionMode = DimensionModes.TwoD;
 				_controller.FreeMovement = false;
@@ -359,7 +359,7 @@ namespace MoreMountains.TopDownEngine
 		}
 
 		/// <summary>
-		/// Moves the character on the grid
+		/// Grid 이용하여 캐릭터 이동하기
 		/// </summary>
 		protected virtual void HandleMovement()
 		{
@@ -367,25 +367,12 @@ namespace MoreMountains.TopDownEngine
 			PerfectTile = false;
 			ProcessBuffer();
             
-			// if we're performing a U turn, we change direction if allowed
-			/*if (FastDirectionChanges && _agentMoving && !_stopBuffered && _movingToNextGridUnit)
-			{
-			    if ((_bufferedDirection != GridDirections.None) 
-			        && (_bufferedDirection == GetInverseDirection(_currentDirection)))
-			    {
-			        _newCellCoordinates = CurrentCellCoordinates + ConvertDirectionToVector3Int(_currentDirection);
-			        _endWorldPosition = GridManager.Instance.CellToWorldCoordinates(_newCellCoordinates);
-			        _endWorldPosition = DimensionClamp(_endWorldPosition);
-			        _currentDirection = _bufferedDirection;
-			    }
-			}*/
-
-			// if we're not in between grid cells
-			if (!_movingToNextGridUnit)
+			// return
+			if (!_movingToNextGrid)
 			{
 				PerfectTile = true;
 
-				// if we have a stop buffered
+				// 스탑 버퍼 있을 때
 				if (_movementInterruptionBuffered)
 				{
 					_perfectTile = true;
@@ -393,7 +380,7 @@ namespace MoreMountains.TopDownEngine
 					return;
 				}
 
-				// if we don't have a direction anymore
+				// 길 막혀있을 때
 				if (_bufferedDirection == GridDirections.None)
 				{
 					_currentDirection = GridDirections.None;
@@ -407,7 +394,7 @@ namespace MoreMountains.TopDownEngine
 					return;
 				}
 
-				// we check if we can move in the selected direction
+				// 해당 방향 진행 가능한지 check
 				if (((_currentDirection == GridDirections.Left) && (_controller.DetectedObstacleLeft != null))
 				    || ((_currentDirection == GridDirections.Right) && (_controller.DetectedObstacleRight != null))
 				    || ((_currentDirection == GridDirections.Up) && (_controller.DetectedObstacleUp != null))
@@ -421,8 +408,8 @@ namespace MoreMountains.TopDownEngine
 					return;
 				}
 
-				// we check if we can move in the selected direction
-				if (((_bufferedDirection == GridDirections.Left) && !(_controller.DetectedObstacleLeft != null))
+                // 해당 방향 진행 가능한지 check (버퍼)
+                if (((_bufferedDirection == GridDirections.Left) && !(_controller.DetectedObstacleLeft != null))
 				    || ((_bufferedDirection == GridDirections.Right) && !(_controller.DetectedObstacleRight != null))
 				    || ((_bufferedDirection == GridDirections.Up) && !(_controller.DetectedObstacleUp != null))
 				    || ((_bufferedDirection == GridDirections.Down) && !(_controller.DetectedObstacleDown != null)))
@@ -430,14 +417,14 @@ namespace MoreMountains.TopDownEngine
 					_currentDirection = _bufferedDirection;
 				}
 
-				// we compute and move towards our new destination
-				_movingToNextGridUnit = true;
+				// 계산 후 다음으로 진행
+				_movingToNextGrid = true;
 				DetermineEndPosition();
 
-				// we make sure the target cell is free
+				// 비어있는 타겟 확인
 				if (GridManager.Instance.CellIsOccupied(TargetGridPosition))
 				{
-					_movingToNextGridUnit = false;
+					_movingToNextGrid = false;
 					_currentDirection = GridDirections.None;
 					_bufferedDirection = GridDirections.None;
 					_agentMoving = false;
@@ -454,10 +441,10 @@ namespace MoreMountains.TopDownEngine
 				}
 			}
 
-			// computes our new grid position
-			TargetGridPosition = GridManager.Instance.WorldToCellCoordinates(_endWorldPosition);
+            // position 계산
+            TargetGridPosition = GridManager.Instance.WorldToCellCoordinates(_endWorldPosition);
             
-			// moves the controller to the next position
+			// Player 이동시키기
 			Vector3 newPosition = Vector3.MoveTowards(transform.position, _endWorldPosition, Time.deltaTime * CurrentSpeed);
 
 			_lastCurrentDirection = _endWorldPosition - this.transform.position;
@@ -489,14 +476,14 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			// if we've reached our next tile, we're not moving anymore
-			if (_movingToNextGridUnit && (transform.position == _endWorldPosition))
+			if (_movingToNextGrid && (transform.position == _endWorldPosition))
 			{
-				_movingToNextGridUnit = false;
+				_movingToNextGrid = false;
 				CurrentGridPosition = GridManager.Instance.WorldToCellCoordinates(_endWorldPosition);
 			}
 
 			// we handle the buffer. If we have a buffered direction, are on a perfect tile, and don't have an input
-			if ((_bufferedDirection != GridDirections.None) && !_movingToNextGridUnit && (_inputDirection == GridDirections.None) && UseInputBuffer)
+			if ((_bufferedDirection != GridDirections.None) && !_movingToNextGrid && (_inputDirection == GridDirections.None) && UseInputBuffer)
 			{
 				// we reduce the buffer counter
 				_lastBufferInGridUnits--;
@@ -508,7 +495,7 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			// if we have a stop planned and are not moving, we stop
-			if ((_stopBuffered) && !_movingToNextGridUnit)
+			if ((_stopBuffered) && !_movingToNextGrid)
 			{
 				_bufferedDirection = GridDirections.None;
 				_stopBuffered = false;
@@ -585,7 +572,7 @@ namespace MoreMountains.TopDownEngine
 
 		protected virtual void HandleState()
 		{
-			if (_movingToNextGridUnit)
+			if (_movingToNextGrid)
 			{
 				if (_movement.CurrentState != CharacterStates.MovementStates.Walking)
 				{

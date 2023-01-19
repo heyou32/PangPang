@@ -17,9 +17,9 @@ public class EventTester : MonoBehaviour, MMEventListener<MMInventoryEvent>
 	{
 		if (inventoryEvent.InventoryEventType == MMInventoryEventType.ItemUsed)
 		{
-			MMDebug.DebugLogTime("item used");
-			MMDebug.DebugLogTime("ItemID : "+inventoryEvent.EventItem.ItemID);
-			MMDebug.DebugLogTime("Item name : "+inventoryEvent.EventItem.ItemName);
+			PhysicsDebug.DebugLogTime("item used");
+			PhysicsDebug.DebugLogTime("ItemID : "+inventoryEvent.EventItem.ItemID);
+			PhysicsDebug.DebugLogTime("Item name : "+inventoryEvent.EventItem.ItemName);
 		}
 	}
     

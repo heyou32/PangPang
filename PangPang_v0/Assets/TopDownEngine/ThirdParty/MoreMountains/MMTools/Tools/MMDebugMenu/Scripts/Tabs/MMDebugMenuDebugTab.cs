@@ -31,7 +31,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual void Awake()
 		{
-			MMDebug.MMDebugLogEvent.Register(OnMMDebugLogEvent);
+			PhysicsDebug.MMDebugLogEvent.Register(OnMMDebugLogEvent);
 			DebugText.text = "";
 			_rectTransform = this.gameObject.GetComponent<RectTransform>();
 
@@ -40,7 +40,7 @@ namespace MoreMountains.Tools
 				CommandPrompt.text = "";
 				if (val != "")
 				{
-					MMDebug.DebugLogCommand(val);
+					PhysicsDebug.DebugLogCommand(val);
 				}                
 			});
 		}
@@ -86,9 +86,9 @@ namespace MoreMountains.Tools
 		/// when we get a new log event, we update our text and scroll to the bottom
 		/// </summary>
 		/// <param name="item"></param>
-		protected virtual void OnMMDebugLogEvent(MMDebug.DebugLogItem item)
+		protected virtual void OnMMDebugLogEvent(PhysicsDebug.DebugLogItem item)
 		{
-			DebugText.text = MMDebug.LogHistoryText;
+			DebugText.text = PhysicsDebug.LogHistoryText;
 			if (this.gameObject.activeInHierarchy)
 			{
 				StartCoroutine(ScrollToLogBottomCo());
@@ -112,7 +112,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		public virtual void OnDestroy()
 		{
-			MMDebug.MMDebugLogEvent.Unregister(OnMMDebugLogEvent);
+			PhysicsDebug.MMDebugLogEvent.Unregister(OnMMDebugLogEvent);
 		}
 	}
 }

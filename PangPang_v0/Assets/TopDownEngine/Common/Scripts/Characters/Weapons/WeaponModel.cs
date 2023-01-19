@@ -106,7 +106,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_handleWeapon.CurrentWeapon != null)
 				{
-					_weaponAim = _handleWeapon.CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim>();
+					_weaponAim = _handleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
 				}                
 			}
 			else

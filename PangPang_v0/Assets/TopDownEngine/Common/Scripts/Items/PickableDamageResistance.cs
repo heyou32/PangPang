@@ -19,16 +19,16 @@ namespace MoreMountains.TopDownEngine
 		
 		/// If activating or disabling by label, the exact label of the target resistance
 		[Tooltip("If activating or disabling by label, the exact label of the target resistance")]
-		[MMEnumCondition("Mode", (int)Modes.ActivateByLabel, (int)Modes.DisableByLabel)]
+		[EnumCondition("Mode", (int)Modes.ActivateByLabel, (int)Modes.DisableByLabel)]
 		public string TargetLabel = "SomeResistance";
 		
 		/// in create mode, the name of the new game object to create to host the new resistance
 		[Tooltip("in create mode, the name of the new game object to create to host the new resistance")]
-		[MMEnumCondition("Mode", (int)Modes.Create)]
+		[EnumCondition("Mode", (int)Modes.Create)]
 		public string NewResistanceNodeName = "NewResistance";
 		/// in create mode, a DamageResistance to copy and give to the new node. Usually you'll want to create a new DamageResistance component on your picker, and drag it in this slot
 		[Tooltip("in create mode, a DamageResistance to copy and give to the new node. Usually you'll want to create a new DamageResistance component on your picker, and drag it in this slot")]
-		[MMEnumCondition("Mode", (int)Modes.Create)]
+		[EnumCondition("Mode", (int)Modes.Create)]
 		public DamageResistance DamageResistanceToGive;
 		
 		/// if this is true, only player characters can pick this up
@@ -41,13 +41,13 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="collider">Other.</param>
 		protected override void Pick(GameObject picker)
 		{
-			Character character = picker.gameObject.MMGetComponentNoAlloc<Character>();
+			Character character = picker.gameObject.GetComponentNoAlloc<Character>();
 			if (OnlyForPlayerCharacter && (character != null) && (_character.CharacterType != Character.CharacterTypes.Player))
 			{
 				return;
 			}
 
-			Health characterHealth = picker.gameObject.MMGetComponentNoAlloc<Health>();
+			Health characterHealth = picker.gameObject.GetComponentNoAlloc<Health>();
 			// else, we give health to the player
 			if (characterHealth == null)
 			{

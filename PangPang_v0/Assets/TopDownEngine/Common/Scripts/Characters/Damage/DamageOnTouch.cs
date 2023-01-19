@@ -353,11 +353,11 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_boxCollider2D.enabled)
 				{
-					MMDebug.DrawGizmoCube(transform, _gizmoOffset, _boxCollider2D.size, false);
+					PhysicsDebug.DrawGizmoCube(transform, _gizmoOffset, _boxCollider2D.size, false);
 				}
 				else
 				{
-					MMDebug.DrawGizmoCube(transform, _gizmoOffset, _boxCollider2D.size, true);
+					PhysicsDebug.DrawGizmoCube(transform, _gizmoOffset, _boxCollider2D.size, true);
 				}
 			}
 
@@ -378,12 +378,12 @@ namespace MoreMountains.TopDownEngine
 			if (_boxCollider != null)
 			{
 				if (_boxCollider.enabled)
-					MMDebug.DrawGizmoCube(transform,
+					PhysicsDebug.DrawGizmoCube(transform,
 						_gizmoOffset,
 						_boxCollider.size,
 						false);
 				else
-					MMDebug.DrawGizmoCube(transform,
+					PhysicsDebug.DrawGizmoCube(transform,
 						_gizmoOffset,
 						_boxCollider.size,
 						true);
@@ -578,7 +578,7 @@ namespace MoreMountains.TopDownEngine
 
 			// cache reset 
 			_colliderTopDownController = null;
-			_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();
+			_colliderHealth = collider.gameObject.GetComponentNoAlloc<Health>();
 			
 			// if what we're colliding with is damageable
 			if (_colliderHealth != null)
@@ -633,7 +633,7 @@ namespace MoreMountains.TopDownEngine
 			if (health.CanTakeDamageThisFrame())
 			{
 				// if what we're colliding with is a TopDownController, we apply a knockback force
-				_colliderTopDownController = health.gameObject.MMGetComponentNoAlloc<TopDownController>();
+				_colliderTopDownController = health.gameObject.GetComponentNoAlloc<TopDownController>();
 
 				HitDamageableFeedback?.PlayFeedbacks(this.transform.position);
 

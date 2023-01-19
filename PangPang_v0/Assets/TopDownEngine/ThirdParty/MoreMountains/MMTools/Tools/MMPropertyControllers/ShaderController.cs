@@ -29,27 +29,27 @@ namespace MoreMountains.Tools
 		public TargetTypes TargetType = TargetTypes.Renderer;
 		/// the renderer with the shader you want to control
 		[Tooltip("the renderer with the shader you want to control")]
-		[MMEnumCondition("TargetType",(int)TargetTypes.Renderer)]
+		[EnumCondition("TargetType",(int)TargetTypes.Renderer)]
 		public Renderer TargetRenderer;
 		/// the ID of the material in the Materials array on the target renderer (usually 0)
 		[Tooltip("the ID of the material in the Materials array on the target renderer (usually 0)")]
-		[MMEnumCondition("TargetType", (int)TargetTypes.Renderer)]
+		[EnumCondition("TargetType", (int)TargetTypes.Renderer)]
 		public int TargetMaterialID = 0;
 		/// the Image with the shader you want to control
 		[Tooltip("the Image with the shader you want to control")]
-		[MMEnumCondition("TargetType", (int)TargetTypes.Image)]
+		[EnumCondition("TargetType", (int)TargetTypes.Image)]
 		public Image TargetImage;
 		/// if this is true, the 'materialForRendering' for this Image will be used, instead of the regular material
 		[Tooltip("if this is true, the 'materialForRendering' for this Image will be used, instead of the regular material")]
-		[MMEnumCondition("TargetType", (int)TargetTypes.Image)]
+		[EnumCondition("TargetType", (int)TargetTypes.Image)]
 		public bool UseMaterialForRendering = false;
 		/// the RawImage with the shader you want to control
 		[Tooltip("the RawImage with the shader you want to control")]
-		[MMEnumCondition("TargetType", (int)TargetTypes.RawImage)]
+		[EnumCondition("TargetType", (int)TargetTypes.RawImage)]
 		public RawImage TargetRawImage;
 		/// the Text with the shader you want to control
 		[Tooltip("the Text with the shader you want to control")]
-		[MMEnumCondition("TargetType", (int)TargetTypes.Text)]
+		[EnumCondition("TargetType", (int)TargetTypes.Text)]
 		public Text TargetText;
 		/// if this is true, material will be cached on Start
 		[Tooltip("if this is true, material will be cached on Start")]
@@ -65,19 +65,19 @@ namespace MoreMountains.Tools
 		public PropertyTypes PropertyType = PropertyTypes.Float;
 		/// whether or not to affect its x component
 		[Tooltip("whether or not to affect its x component")]
-		[MMEnumCondition("PropertyType", (int)PropertyTypes.Vector)]
+		[EnumCondition("PropertyType", (int)PropertyTypes.Vector)]
 		public bool X;
 		/// whether or not to affect its y component
 		[Tooltip("whether or not to affect its y component")]
-		[MMEnumCondition("PropertyType", (int)PropertyTypes.Vector)]
+		[EnumCondition("PropertyType", (int)PropertyTypes.Vector)]
 		public bool Y;
 		/// whether or not to affect its z component
 		[Tooltip("whether or not to affect its z component")]
-		[MMEnumCondition("PropertyType", (int)PropertyTypes.Vector)]
+		[EnumCondition("PropertyType", (int)PropertyTypes.Vector)]
 		public bool Z;
 		/// whether or not to affect its w component
 		[Tooltip("whether or not to affect its w component")]
-		[MMEnumCondition("PropertyType", (int)PropertyTypes.Vector)]
+		[EnumCondition("PropertyType", (int)PropertyTypes.Vector)]
 		public bool W;
 
 		[Header("Color")]
@@ -112,7 +112,7 @@ namespace MoreMountains.Tools
 		public bool RevertToInitialValueAfterEnd = true;
 		/// if this is true, this component will use material property blocks instead of working on an instance of the material.
 		[Tooltip("if this is true, this component will use material property blocks instead of working on an instance of the material.")] 
-		[MMEnumCondition("TargetType", (int)TargetTypes.Renderer)]
+		[EnumCondition("TargetType", (int)TargetTypes.Renderer)]
 		public bool UseMaterialPropertyBlocks = false;
 		/// if using material property blocks on a sprite renderer, you'll want to make sure the sprite texture gets passed to the block when updating it. For that, you need to specify your sprite's material's shader's texture property name. If you're not working with a sprite renderer, you can safely ignore this.
 		[Tooltip("if using material property blocks on a sprite renderer, you'll want to make sure the sprite texture gets passed to the block when updating it. For that, you need to specify your sprite's material's shader's texture property name. If you're not working with a sprite renderer, you can safely ignore this.")]

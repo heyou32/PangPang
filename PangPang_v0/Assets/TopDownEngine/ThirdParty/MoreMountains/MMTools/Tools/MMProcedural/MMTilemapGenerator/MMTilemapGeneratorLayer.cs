@@ -106,107 +106,107 @@ namespace MoreMountains.Tools
 		// full
 		/// in full mode, whether the grid should be full or empty
 		[Tooltip("in full mode, whether the grid should be full or empty")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.Full)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.Full)]
 		public bool FullGenerationFilled = true;
     
 		// random
 		/// in random mode, the percentage of the grid to fill
 		[Tooltip("in random mode, the percentage of the grid to fill")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.Random)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.Random)]
 		public int RandomFillPercentage = 50;
     
 		// random walk ground 
 		/// in random walk ground mode,the minimum height difference between two steps
 		[Tooltip("in random walk ground mode,the minimum height difference between two steps")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
 		public int RandomWalkGroundMinHeightDifference = 1;
 		/// in random walk ground mode,the maximum height difference between two steps 
 		[Tooltip("in random walk ground mode,the maximum height difference between two steps")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
 		public int RandomWalkGroundMaxHeightDifference = 3;
 		/// in random walk ground mode, the minimum distance that should remain flat
 		[Tooltip("in random walk ground mode, the minimum distance that should remain flat")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
 		public int RandomWalkGroundMinFlatDistance = 1;
 		/// in random walk ground mode, the maximum distance that should remain flat
 		[Tooltip("in random walk ground mode, the maximum distance that should remain flat")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
 		public int RandomWalkGroundMaxFlatDistance = 3;
 		/// in random walk ground mode, the maximum height of the tallest platfrom, from the bottom of the grid
 		[Tooltip("in random walk ground mode, the maximum height of the tallest platfrom, from the bottom of the grid")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkGround)]
 		public int RandomWalkGroundMaxHeight = 3;
         
 		// random walk
 		/// in random walk mode, the percentage of the map the walker should try filling
 		[Tooltip("in random walk mode, the percentage of the map the walker should try filling")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
 		public int RandomWalkPercent = 50;
 		/// in random walk mode,the point at which the walker starts, in grid coordinates
 		[Tooltip("in random walk mode,the point at which the walker starts, in grid coordinates")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
 		public Vector2Int RandomWalkStartingPoint = Vector2Int.zero;
 		/// in random walk mode, the max amount of iterations to run the random on 
 		[Tooltip("in random walk mode, the max amount of iterations to run the random on")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalk)]
 		public int RandomWalkMaxIterations = 1500;
         
 		// random walk avoider
 		/// in random walk avoider mode, the percentage of the grid the walker should try filling
 		[Tooltip("in random walk avoider mode, the percentage of the grid the walker should try filling")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
 		public int RandomWalkAvoiderPercent = 50;
 		/// in random walk avoider mode, the point in grid units at which the walker starts 
 		[Tooltip("in random walk avoider mode, the point in grid units at which the walker starts")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
 		public Vector2Int RandomWalkAvoiderStartingPoint = Vector2Int.zero;
 		/// in random walk avoider mode, the tilemap containing the data the walker will try to avoid
 		[Tooltip("in random walk avoider mode, the tilemap containing the data the walker will try to avoid")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
 		public Tilemap RandomWalkAvoiderObstaclesTilemap;
 		/// in random walk avoider mode,the distance at which the walker should try to stay away from obstacles
 		[Tooltip("in random walk avoider mode,the distance at which the walker should try to stay away from obstacles")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
 		public int RandomWalkAvoiderObstaclesDistance = 1;
 		/// in random walk avoider mode,the max amount of iterations this algorithm will iterate on
 		[Tooltip("in random walk avoider mode,the max amount of iterations this algorithm will iterate on")]
-		[MMEnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
+		[EnumCondition("GenerateMethod", (int)MMTilemapGenerator.GenerateMethods.RandomWalkAvoider)]
 		public int RandomWalkAvoiderMaxIterations = 100;
         
 		// path
 		/// in path mode, the start position of the path
 		[Tooltip("in path mode, the start position of the path")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public Vector2Int PathStartPosition = Vector2Int.zero;
 		/// in path mode, the direction the path should follow
 		[Tooltip("in path mode, the direction the path should follow")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public MMGridGeneratorPath.Directions PathDirection = MMGridGeneratorPath.Directions.BottomToTop;
 		/// in path mode, the minimum width of the path
 		[Tooltip("in path mode, the minimum width of the path")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public int PathMinWidth = 2;
 		/// in path mode, the maximum width of the path
 		[Tooltip("in path mode, the maximum width of the path")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public int PathMaxWidth = 4;
 		/// in path mode, the maximum number of units the path can change direction
 		[Tooltip("in path mode, the maximum number of units the path can change direction")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public int PathDirectionChangeDistance = 2;
 		/// in path mode, the chance (in percent) for the path to change width at every step
 		[Tooltip("in path mode, the chance (in percent) for the path to change width at every step")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public int PathWidthChangePercentage = 50;
 		/// in path mode, the chance percentage that the path will take a new direction
 		[Tooltip("in path mode, the chance percentage that the path will take a new direction")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Path)]
 		public int PathDirectionChangePercentage = 50;
         
 		// copy
 		/// in copy mode, the tilemap to copy
 		[Tooltip("in copy mode, the tilemap to copy")]
-		[MMEnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Copy)]
+		[EnumCondition("GenerateMethod", (int) MMTilemapGenerator.GenerateMethods.Copy)]
 		public Tilemap CopyTilemap;
     
 		[Header("Bounds")] 

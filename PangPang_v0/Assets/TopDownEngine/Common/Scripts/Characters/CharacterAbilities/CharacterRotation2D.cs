@@ -201,7 +201,7 @@ namespace MoreMountains.TopDownEngine
 
 			_shouldRotateTowardsWeapon = true;
 			_rotationDirection = _characterHandleWeapon.WeaponAimComponent.CurrentAim.normalized;
-			MMDebug.DebugDrawArrow(this.transform.position, _rotationDirection, Color.red);
+			PhysicsDebug.DebugDrawArrow(this.transform.position, _rotationDirection, Color.red);
             
 			float angle = Mathf.Atan2(_rotationDirection.y, _rotationDirection.x) * Mathf.Rad2Deg;
 

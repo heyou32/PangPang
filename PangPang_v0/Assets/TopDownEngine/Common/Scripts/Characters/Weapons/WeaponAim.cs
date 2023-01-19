@@ -48,35 +48,35 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("Defines whether the reticle is placed in the scene or in the UI")]
 		public ReticleTypes ReticleType = ReticleTypes.None;
 		/// the gameobject to display as the aim's reticle/crosshair. Leave it blank if you don't want a reticle
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the gameobject to display as the aim's reticle/crosshair. Leave it blank if you don't want a reticle")]
 		public GameObject Reticle;
 		/// the distance at which the reticle will be from the weapon
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the distance at which the reticle will be from the weapon")]
 		public float ReticleDistance;
 		/// the height at which the reticle should position itself above the ground, when in Scene mode
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the height at which the reticle should position itself above the ground, when in Scene mode")]
 		public float ReticleHeight;
 		/// if set to true, the reticle will be placed at the mouse's position (like a pointer)
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("if set to true, the reticle will be placed at the mouse's position (like a pointer)")]
 		public bool ReticleAtMousePosition;
 		/// if set to true, the reticle will rotate on itself to reflect the weapon's rotation. If not it'll remain stable.
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("if set to true, the reticle will rotate on itself to reflect the weapon's rotation. If not it'll remain stable.")]
 		public bool RotateReticle = false;
 		/// if set to true, the reticle will replace the mouse pointer
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("if set to true, the reticle will replace the mouse pointer")]
 		public bool ReplaceMousePointer = true;
 		/// the radius around the weapon rotation centre where the mouse will be ignored, to avoid glitches
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the radius around the weapon rotation centre where the mouse will be ignored, to avoid glitches")]
 		public float MouseDeadZoneRadius = 0.5f;
 		/// if set to false, the reticle won't be added and displayed
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("if set to false, the reticle won't be added and displayed")]
 		public bool DisplayReticle = true;
 

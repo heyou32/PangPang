@@ -61,7 +61,7 @@ namespace MoreMountains.Tools
 			{
 				direction = origin - (myTarget._orbitCenter + newRotation * myTarget._radius);
 			}
-			MMDebug.DebugDrawArrow(origin, direction, myTarget.OrbitLineColor);
+			PhysicsDebug.DebugDrawArrow(origin, direction, myTarget.OrbitLineColor);
 		}
 	}
 }

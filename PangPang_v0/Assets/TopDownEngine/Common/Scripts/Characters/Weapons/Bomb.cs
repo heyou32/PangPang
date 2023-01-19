@@ -74,7 +74,7 @@ namespace MoreMountains.TopDownEngine
 			DisableDamageArea ();
 
 			_propertyBlock = new MaterialPropertyBlock();
-			_renderer = gameObject.MMGetComponentNoAlloc<Renderer> ();
+			_renderer = gameObject.GetComponentNoAlloc<Renderer> ();
 			if (_renderer != null)
 			{
 				if (_renderer.sharedMaterial.HasProperty(MaterialPropertyName))
@@ -83,7 +83,7 @@ namespace MoreMountains.TopDownEngine
 				}
 			}
 
-			_poolableObject = gameObject.MMGetComponentNoAlloc<MMPoolableObject> ();
+			_poolableObject = gameObject.GetComponentNoAlloc<MMPoolableObject> ();
 			if (_poolableObject != null)
 			{
 				_poolableObject.LifeTime = 0;

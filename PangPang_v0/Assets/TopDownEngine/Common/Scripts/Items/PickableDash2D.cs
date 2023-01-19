@@ -41,7 +41,7 @@ namespace  MoreMountains.TopDownEngine
 		/// <param name="picker"></param>
 		protected override void Pick(GameObject picker)
 		{
-			_character.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterDash2D>()?.PermitAbility(true);
+			_character.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterDash2D>()?.PermitAbility(true);
 		}
 	}
 }

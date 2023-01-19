@@ -46,9 +46,9 @@ namespace MoreMountains.TopDownEngine
 		/// <returns></returns>
 		protected virtual bool CheckForObstacles()
 		{
-			_hitLeft = MMDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, (Quaternion.Euler(0f, 0f, -Angle / 2f) * _weaponAim.CurrentAimAbsolute).normalized, Distance, ObstacleLayerMask, Color.yellow, true);
-			_hitMiddle = MMDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, _weaponAim.CurrentAimAbsolute.normalized, Distance, ObstacleLayerMask, Color.yellow, true);
-			_hitRight = MMDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, (Quaternion.Euler(0f, 0f, Angle / 2f) * _weaponAim.CurrentAimAbsolute).normalized, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitLeft = PhysicsDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, (Quaternion.Euler(0f, 0f, -Angle / 2f) * _weaponAim.CurrentAimAbsolute).normalized, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitMiddle = PhysicsDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, _weaponAim.CurrentAimAbsolute.normalized, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitRight = PhysicsDebug.RayCast(this.transform.position + _weaponAim.CurrentRotation * RaycastOriginOffset, (Quaternion.Euler(0f, 0f, Angle / 2f) * _weaponAim.CurrentAimAbsolute).normalized, Distance, ObstacleLayerMask, Color.yellow, true);
 
 			if ((_hitLeft.collider == null) && (_hitMiddle.collider == null) && (_hitRight.collider == null))
 			{

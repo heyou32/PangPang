@@ -49,8 +49,9 @@ namespace MoreMountains.TopDownEngine
 				
 			if (DoNotUseLevelManager)
 			{
-				MMSceneLoadingManager.LoadScene(newSceneName);
-				//MMAdditiveSceneLoadingManager.LoadScene(newSceneName);    
+                SceneLoadingManager.LoadScene(newSceneName);
+
+                //MMAdditiveSceneLoadingManager.LoadScene(newSceneName);    
 			}
 			else
 			{

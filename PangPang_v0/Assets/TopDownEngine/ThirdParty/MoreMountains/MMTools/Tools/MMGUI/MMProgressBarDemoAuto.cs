@@ -10,22 +10,22 @@ namespace MoreMountains.Tools
 		public enum TestModes { Permanent, OneTime }
 		public TestModes TestMode = TestModes.Permanent;
 
-		[MMEnumCondition("TestMode", (int)TestModes.Permanent)]
+		[EnumCondition("TestMode", (int)TestModes.Permanent)]
 		public float CurrentValue = 0f;
-		[MMEnumCondition("TestMode", (int)TestModes.Permanent)]
+		[EnumCondition("TestMode", (int)TestModes.Permanent)]
 		public float MinValue = 0f;
-		[MMEnumCondition("TestMode", (int)TestModes.Permanent)]
+		[EnumCondition("TestMode", (int)TestModes.Permanent)]
 		public float MaxValue = 100f;
-		[MMEnumCondition("TestMode", (int)TestModes.Permanent)]
+		[EnumCondition("TestMode", (int)TestModes.Permanent)]
 		public float Speed = 1f;
 
-		[MMEnumCondition("TestMode", (int)TestModes.OneTime)]
+		[EnumCondition("TestMode", (int)TestModes.OneTime)]
 		public float OneTimeNewValue;
-		[MMEnumCondition("TestMode", (int)TestModes.OneTime)]
+		[EnumCondition("TestMode", (int)TestModes.OneTime)]
 		public float OneTimeMinValue;
-		[MMEnumCondition("TestMode", (int)TestModes.OneTime)]
+		[EnumCondition("TestMode", (int)TestModes.OneTime)]
 		public float OneTimeMaxValue;
-		[MMEnumCondition("TestMode", (int)TestModes.OneTime)]
+		[EnumCondition("TestMode", (int)TestModes.OneTime)]
 		[MMInspectorButton("OneTime")]
 		public bool OneTimeButton;
 

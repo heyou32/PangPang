@@ -93,7 +93,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (DetectMethod == DetectMethods.Ray)
 			{
-				raycast = MMDebug.Raycast3D(_raycastOrigin, _direction, DetectionDistance, TargetLayer, MMColors.Gold, true);
+				raycast = PhysicsDebug.Raycast3D(_raycastOrigin, _direction, DetectionDistance, TargetLayer, MMColors.Gold, true);
                 
 			}
 			else
@@ -112,7 +112,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				// we make sure there isn't an obstacle in between
 				float distance = Vector3.Distance(target.transform.position, _raycastOrigin);
-				RaycastHit raycastObstacle = MMDebug.Raycast3D(_raycastOrigin, (target.transform.position - _raycastOrigin).normalized, distance, ObstaclesLayer, Color.gray, true);
+				RaycastHit raycastObstacle = PhysicsDebug.Raycast3D(_raycastOrigin, (target.transform.position - _raycastOrigin).normalized, distance, ObstaclesLayer, Color.gray, true);
                 
 				if ((raycastObstacle.collider != null) && (_distanceToTarget > raycastObstacle.distance))
 				{
@@ -150,7 +150,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			_characterHandleWeapon.CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim3D>()?.SetCurrentAim(ReferenceTransform.forward);
+			_characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim3D>()?.SetCurrentAim(ReferenceTransform.forward);
 		}
         
 		/// <summary>

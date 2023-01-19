@@ -34,7 +34,7 @@ namespace MoreMountains.TopDownEngine
 		public CyclingModes CyclingMode = CyclingModes.Forever;
 		/// the number of cycles this object can go through before it stops (only used if CyclingMode is Limited)
 		[Tooltip("the number of cycles this object can go through before it stops (only used if CyclingMode is Limited)")]
-		[MMEnumCondition("CyclingMode", (int)CyclingModes.Limited)]
+		[EnumCondition("CyclingMode", (int)CyclingModes.Limited)]
 		public int CyclesAmount = 1;
 
 

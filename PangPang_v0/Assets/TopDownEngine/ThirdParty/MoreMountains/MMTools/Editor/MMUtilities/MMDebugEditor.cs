@@ -16,7 +16,7 @@ namespace MoreMountains.Tools
 		[MenuItem("Tools/More Mountains/Enable Debug Logs", false, 100)]
 		private static void EnableDebugLogs()
 		{
-			MMDebug.SetDebugLogsEnabled(true);
+			PhysicsDebug.SetDebugLogsEnabled(true);
 		}
 
 		/// <summary>
@@ -25,7 +25,7 @@ namespace MoreMountains.Tools
 		[MenuItem("Tools/More Mountains/Enable Debug Logs", true)]
 		private static bool EnableDebugLogsValidation()
 		{
-			return !MMDebug.DebugLogsEnabled;
+			return !PhysicsDebug.DebugLogsEnabled;
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace MoreMountains.Tools
 		[MenuItem("Tools/More Mountains/Disable Debug Logs", false, 101)]
 		private static void DisableDebugLogs()
 		{
-			MMDebug.SetDebugLogsEnabled(false);
+			PhysicsDebug.SetDebugLogsEnabled(false);
 		}
 
 		/// <summary>
@@ -43,7 +43,7 @@ namespace MoreMountains.Tools
 		[MenuItem("Tools/More Mountains/Disable Debug Logs", true)]
 		private static bool DisableDebugLogsValidation()
 		{
-			return MMDebug.DebugLogsEnabled;
+			return PhysicsDebug.DebugLogsEnabled;
 		}
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace MoreMountains.Tools
 		[MenuItem("Tools/More Mountains/Enable Debug Draws", false, 102)]
 		private static void EnableDebugDraws()
 		{
-			MMDebug.SetDebugDrawEnabled(true);
+			PhysicsDebug.SetDebugDrawEnabled(true);
 		}
 
 		[MenuItem("Tools/More Mountains/Enable Debug Draws", true)]
@@ -61,7 +61,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		private static bool EnableDebugDrawsValidation()
 		{
-			return !MMDebug.DebugDrawEnabled;
+			return !PhysicsDebug.DebugDrawEnabled;
 		}
 
 		[MenuItem("Tools/More Mountains/Disable Debug Draws", false, 103)]
@@ -70,7 +70,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		private static void DisableDebugDraws()
 		{
-			MMDebug.SetDebugDrawEnabled(false);
+			PhysicsDebug.SetDebugDrawEnabled(false);
 		}
 
 		[MenuItem("Tools/More Mountains/Disable Debug Draws", true)]
@@ -79,7 +79,7 @@ namespace MoreMountains.Tools
 		/// </summary>
 		private static bool DisableDebugDrawsValidation()
 		{
-			return MMDebug.DebugDrawEnabled;
+			return PhysicsDebug.DebugDrawEnabled;
 		}
 
 	}

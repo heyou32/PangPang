@@ -102,7 +102,7 @@ namespace MoreMountains.Feedbacks
 					SceneManager.LoadScene(DestinationSceneName);
 					break;
 				case LoadingModes.MMSceneLoadingManager:
-					MMSceneLoadingManager.LoadScene(DestinationSceneName, LoadingSceneName);
+					SceneLoadingManager.LoadScene(DestinationSceneName, LoadingSceneName);
 					break;
 				case LoadingModes.MMAdditiveSceneLoadingManager:
 					MMAdditiveSceneLoadingManager.LoadScene(DestinationSceneName, LoadingSceneName, 
