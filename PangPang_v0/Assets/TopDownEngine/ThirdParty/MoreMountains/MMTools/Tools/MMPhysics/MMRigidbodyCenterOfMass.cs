@@ -62,8 +62,8 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual void Initialization()
 		{
-			_rigidbody = this.gameObject.MMGetComponentNoAlloc<Rigidbody>();
-			_rigidbody2D = this.gameObject.MMGetComponentNoAlloc<Rigidbody2D>();
+			_rigidbody = this.gameObject.GetComponentNoAlloc<Rigidbody>();
+			_rigidbody2D = this.gameObject.GetComponentNoAlloc<Rigidbody2D>();
 		}
 
 		/// <summary>
@@ -93,7 +93,7 @@ namespace MoreMountains.Tools
 		protected virtual void OnDrawGizmosSelected()
 		{
 			_gizmoCenter = this.transform.TransformPoint(CenterOfMassOffset);
-			MMDebug.DrawGizmoPoint(_gizmoCenter, GizmoPointSize, Color.yellow);
+			PhysicsDebug.DrawGizmoPoint(_gizmoCenter, GizmoPointSize, Color.yellow);
 		}
 	}
 }

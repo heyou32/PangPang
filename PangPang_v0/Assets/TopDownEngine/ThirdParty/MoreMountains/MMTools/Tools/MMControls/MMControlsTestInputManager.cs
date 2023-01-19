@@ -15,16 +15,16 @@ namespace MoreMountains.Tools
 			Application.targetFrameRate = 300;
 		}
 
-		public virtual void LeftJoystickMovement(Vector2 movement) { MMDebug.DebugOnScreen("left joystick",movement); }
-		public virtual void RightJoystickMovement(Vector2 movement) { MMDebug.DebugOnScreen("right joystick", movement); }
-		public virtual void RepositionableJoystickMovement(Vector2 movement) { MMDebug.DebugOnScreen("Repositionable joystick", movement); }
-		public virtual void FollowerJoystickMovement(Vector2 movement) { MMDebug.DebugOnScreen("Follower joystick", movement); }
+		public virtual void LeftJoystickMovement(Vector2 movement) { PhysicsDebug.DebugOnScreen("left joystick",movement); }
+		public virtual void RightJoystickMovement(Vector2 movement) { PhysicsDebug.DebugOnScreen("right joystick", movement); }
+		public virtual void RepositionableJoystickMovement(Vector2 movement) { PhysicsDebug.DebugOnScreen("Repositionable joystick", movement); }
+		public virtual void FollowerJoystickMovement(Vector2 movement) { PhysicsDebug.DebugOnScreen("Follower joystick", movement); }
 
-		public virtual void APressed() { MMDebug.DebugOnScreen("Button A Pressed"); }
-		public virtual void BPressed() { MMDebug.DebugOnScreen("Button B Pressed"); }
-		public virtual void XPressed() { MMDebug.DebugOnScreen("Button X Pressed"); }
-		public virtual void YPressed() { MMDebug.DebugOnScreen("Button Y Pressed"); }
-		public virtual void RTPressed()	{ MMDebug.DebugOnScreen("Button RT Pressed"); }
+		public virtual void APressed() { PhysicsDebug.DebugOnScreen("Button A Pressed"); }
+		public virtual void BPressed() { PhysicsDebug.DebugOnScreen("Button B Pressed"); }
+		public virtual void XPressed() { PhysicsDebug.DebugOnScreen("Button X Pressed"); }
+		public virtual void YPressed() { PhysicsDebug.DebugOnScreen("Button Y Pressed"); }
+		public virtual void RTPressed()	{ PhysicsDebug.DebugOnScreen("Button RT Pressed"); }
 
 		public virtual void APressedFirstTime() { Debug.LogFormat("Button A Pressed for the first time"); }
 		public virtual void BPressedFirstTime() { Debug.LogFormat("Button B Pressed for the first time"); }
@@ -38,8 +38,8 @@ namespace MoreMountains.Tools
 		public virtual void YReleased()	{ Debug.LogFormat("Button Y Released"); }
 		public virtual void RTReleased()	{ Debug.LogFormat("Button RT Released"); }
 
-		public virtual void HorizontalAxisPressed(float value) { MMDebug.DebugOnScreen("horizontal movement",value); }
-		public virtual void VerticalAxisPressed(float value) { MMDebug.DebugOnScreen("vertical movement",value); }
+		public virtual void HorizontalAxisPressed(float value) { PhysicsDebug.DebugOnScreen("horizontal movement",value); }
+		public virtual void VerticalAxisPressed(float value) { PhysicsDebug.DebugOnScreen("vertical movement",value); }
 
 		public virtual void LeftPressedFirstTime() { Debug.LogFormat("Button Left Pressed for the first time"); }
 		public virtual void UpPressedFirstTime() { Debug.LogFormat("Button Up Pressed for the first time"); }

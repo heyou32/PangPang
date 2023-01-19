@@ -22,27 +22,27 @@ namespace MoreMountains.TopDownEngine
 		public MeleeDamageAreaModes MeleeDamageAreaMode = MeleeDamageAreaModes.Generated;
 		/// the shape of the damage area (rectangle or circle)
 		[Tooltip("the shape of the damage area (rectangle or circle)")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public MeleeDamageAreaShapes DamageAreaShape = MeleeDamageAreaShapes.Rectangle;
 		/// the size of the damage area
 		[Tooltip("the size of the damage area")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public Vector3 AreaSize = new Vector3(1, 1);
 		/// the offset to apply to the damage area (from the weapon's attachment position
 		[Tooltip("the offset to apply to the damage area (from the weapon's attachment position")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public Vector3 AreaOffset = new Vector3(1, 0);
 		/// the feedback to play when hitting a Damageable
 		[Tooltip("the feedback to play when hitting a Damageable")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public MMFeedbacks HitDamageableFeedback;
 		/// the feedback to play when hitting a non Damageable
 		[Tooltip("the feedback to play when hitting a non Damageable")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public MMFeedbacks HitNonDamageableFeedback;
 		/// an existing damage area to activate/handle as the weapon is used
 		[Tooltip("an existing damage area to activate/handle as the weapon is used")]
-		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Existing)]
+		[EnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Existing)]
 		public DamageOnTouch ExistingDamageArea;
 
 		[MMInspectorGroup("Damage Area Timing", true, 23)]
@@ -286,7 +286,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (DamageAreaShape == MeleeDamageAreaShapes.Rectangle)
 			{
-				MMDebug.DrawGizmoRectangle(this.transform.position + AreaOffset, AreaSize, Color.red);
+				PhysicsDebug.DrawGizmoRectangle(this.transform.position + AreaOffset, AreaSize, Color.red);
 			}
 
 			if (DamageAreaShape == MeleeDamageAreaShapes.Sphere)

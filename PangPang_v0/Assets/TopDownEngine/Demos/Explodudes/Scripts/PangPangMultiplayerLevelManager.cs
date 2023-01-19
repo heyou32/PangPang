@@ -13,7 +13,7 @@ namespace MoreMountains.TopDownEngine
 	/// - if all players (but one) are dead, the game stops and whoever got the most coins wins
 	/// - at the end of the game, a Winner screen is displayed and tapping Jump anywhere restarts the game
 	/// </summary>
-	public class ExplodudesMultiplayerLevelManager : MultiplayerLevelManager
+	public class PangPangMultiplayerLevelManager : MultiplayerLevelManager
 	{
 		[Header("Explodudes Settings")]
 		/// the duration of the game, in seconds
@@ -97,7 +97,7 @@ namespace MoreMountains.TopDownEngine
 				    || (Input.GetButton("Player4_Jump")))
 				{
 					MMTimeScaleEvent.Trigger(MMTimeScaleMethods.Reset, 1f, 0f, false, 0f, true);
-					MMSceneLoadingManager.LoadScene(SceneManager.GetActiveScene().name);
+					SceneLoadingManager.LoadScene(SceneManager.GetActiveScene().name);
 				}
 			}
 		}

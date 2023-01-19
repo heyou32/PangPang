@@ -34,7 +34,7 @@ namespace MoreMountains.Tools
 					SceneManager.LoadScene (SceneName);
 					break;
 				case LoadingSceneModes.MMSceneLoadingManager:
-					MMSceneLoadingManager.LoadScene (SceneName);
+					SceneLoadingManager.LoadScene (SceneName);
 					break;
 				case LoadingSceneModes.MMAdditiveSceneLoadingManager:
 					MMAdditiveSceneLoadingManager.LoadScene(SceneName);

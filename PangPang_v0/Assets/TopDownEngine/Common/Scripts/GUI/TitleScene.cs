@@ -11,7 +11,7 @@ namespace MoreMountains.TopDownEngine
 	/// Simple start screen class.
 	/// </summary>
 	[AddComponentMenu("TopDown Engine/GUI/StartScreen")]
-	public class StartScreen : TopDownMonoBehaviour
+	public class TitleScene : TopDownMonoBehaviour
 	{
 		/// the level to load after the start screen
 		[Tooltip("the level to load after the start screen")]
@@ -61,17 +61,17 @@ namespace MoreMountains.TopDownEngine
 		{
 			await Task.Delay(1);
 			
-			if (MusicSwitch != null)
-			{
-				MusicSwitch.CurrentSwitchState = MMSoundManager.Instance.settingsSo.Settings.MusicOn ? MMSwitch.SwitchStates.Right : MMSwitch.SwitchStates.Left;
-				MusicSwitch.InitializeState ();
-			}
+			//if (MusicSwitch != null)
+			//{
+			//	MusicSwitch.CurrentSwitchState = MMSoundManager.Instance.settingsSo.Settings.MusicOn ? MMSwitch.SwitchStates.Right : MMSwitch.SwitchStates.Left;
+			//	MusicSwitch.InitializeState ();
+			//}
 
-			if (SfxSwitch != null)
-			{
-				SfxSwitch.CurrentSwitchState = MMSoundManager.Instance.settingsSo.Settings.SfxOn ? MMSwitch.SwitchStates.Right : MMSwitch.SwitchStates.Left;
-				SfxSwitch.InitializeState ();
-			}
+			//if (SfxSwitch != null)
+			//{
+			//	SfxSwitch.CurrentSwitchState = MMSoundManager.Instance.settingsSo.Settings.SfxOn ? MMSwitch.SwitchStates.Right : MMSwitch.SwitchStates.Left;
+			//	SfxSwitch.InitializeState ();
+			//}
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace MoreMountains.TopDownEngine
 			if (!Input.GetButtonDown ("Player1_Jump"))
 				return;
 			
-			ButtonPressed ();
+			//ButtonPressed ();
 		}
 
 		/// <summary>
@@ -101,8 +101,9 @@ namespace MoreMountains.TopDownEngine
 		/// <returns>The first level.</returns>
 		protected virtual IEnumerator LoadFirstLevel()
 		{
+			Debug.Log("debugging"); ;
 			yield return new WaitForSeconds (FadeOutDuration);
-			MMSceneLoadingManager.LoadScene (NextLevel);
+			SceneLoadingManager.LoadScene (NextLevel);
 		}
 	}
 }

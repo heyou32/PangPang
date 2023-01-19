@@ -38,9 +38,9 @@ namespace MoreMountains.TopDownEngine
 		/// <returns></returns>
 		protected virtual bool CheckForObstacles()
 		{
-			_hitLeft = MMDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, Quaternion.Euler(0f, -Angle/2f, 0f) * this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
-			_hitMiddle = MMDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
-			_hitRight = MMDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, Quaternion.Euler(0f, Angle / 2f, 0f) * this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitLeft = PhysicsDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, Quaternion.Euler(0f, -Angle/2f, 0f) * this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitMiddle = PhysicsDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
+			_hitRight = PhysicsDebug.Raycast3D(this.transform.position + this.transform.rotation * RaycastOriginOffset, Quaternion.Euler(0f, Angle / 2f, 0f) * this.transform.forward, Distance, ObstacleLayerMask, Color.yellow, true);
 
 			if ((_hitLeft.collider == null) && (_hitMiddle.collider == null) && (_hitRight.collider == null))
 			{

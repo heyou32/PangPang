@@ -118,7 +118,7 @@ namespace MoreMountains.TopDownEngine
 		/// <returns></returns>
 		protected virtual bool TargetFound(GameObject collider)
 		{
-			_character = collider.gameObject.MMGetComponentNoAlloc<Character>();
+			_character = collider.gameObject.GetComponentNoAlloc<Character>();
             
 			if (_character == null)
 			{

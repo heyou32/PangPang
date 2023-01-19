@@ -67,7 +67,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (RequiresKey)
 			{
-				CharacterInventory characterInventory = _collidingObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterInventory> ();
+				CharacterInventory characterInventory = _collidingObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterInventory> ();
 				if (characterInventory == null)
 				{
 					PromptError();

@@ -7,13 +7,13 @@ using UnityEditor;
 namespace MoreMountains.Tools
 {
 	// original implementation by http://www.brechtos.com/hiding-or-disabling-inspector-properties-using-propertydrawers-within-unity-5/
-	[CustomPropertyDrawer(typeof(MMEnumConditionAttribute))]
+	[CustomPropertyDrawer(typeof(EnumConditionAttribute))]
 	public class MMEnumConditionAttributeDrawer : PropertyDrawer
 	{
 		#if  UNITY_EDITOR
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			MMEnumConditionAttribute enumConditionAttribute = (MMEnumConditionAttribute)attribute;
+			EnumConditionAttribute enumConditionAttribute = (EnumConditionAttribute)attribute;
 			bool enabled = GetConditionAttributeResult(enumConditionAttribute, property);
 			bool previouslyEnabled = GUI.enabled;
 			GUI.enabled = enabled;
@@ -27,7 +27,7 @@ namespace MoreMountains.Tools
 
 		private static Dictionary<string, string> cachedPaths = new Dictionary<string, string>();
 
-		private bool GetConditionAttributeResult(MMEnumConditionAttribute enumConditionAttribute, SerializedProperty property)
+		private bool GetConditionAttributeResult(EnumConditionAttribute enumConditionAttribute, SerializedProperty property)
 		{
 			bool enabled = true;
 
@@ -58,7 +58,7 @@ namespace MoreMountains.Tools
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
-			MMEnumConditionAttribute enumConditionAttribute = (MMEnumConditionAttribute)attribute;
+			EnumConditionAttribute enumConditionAttribute = (EnumConditionAttribute)attribute;
 			bool enabled = GetConditionAttributeResult(enumConditionAttribute, property);
 
 			if (!enumConditionAttribute.Hidden || enabled)

@@ -19,7 +19,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Start()
 		{
-			this.gameObject.MMGetComponentNoAlloc<Collider>().isTrigger = true;
+			this.gameObject.GetComponentNoAlloc<Collider>().isTrigger = true;
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="collider"></param>
 		protected virtual void OnTriggerEnter(Collider collider)
 		{
-			_characterCrouch = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterCrouch>();
+			_characterCrouch = collider.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterCrouch>();
 			if (_characterCrouch != null)
 			{
 				_characterCrouch.StartForcedCrouch();
@@ -41,7 +41,7 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="collider"></param>
 		protected virtual void OnTriggerExit(Collider collider)
 		{
-			_characterCrouch = collider.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterCrouch>();
+			_characterCrouch = collider.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterCrouch>();
 			if (_characterCrouch != null)
 			{
 				_characterCrouch.StopForcedCrouch();

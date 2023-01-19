@@ -21,15 +21,15 @@ namespace MoreMountains.TopDownEngine
 	    
 		[Header("Reticle and slopes")]
 		/// whether or not the reticle should move vertically to stay above slopes
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("whether or not the reticle should move vertically to stay above slopes")]
 		public bool ReticleMovesWithSlopes = false;
 		/// the layers the reticle should consider as obstacles to move on
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the layers the reticle should consider as obstacles")]
 		public LayerMask ReticleObstacleMask = LayerManager.ObstaclesLayerMask;
 		/// the maximum slope elevation for the reticle
-		[MMEnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
+		[EnumCondition("ReticleType", (int)ReticleTypes.Scene, (int)ReticleTypes.UI)]
 		[Tooltip("the maximum slope elevation for the reticle")]
 		public float MaximumSlopeElevation = 50f;
 		/// if this is true, the aim system will try to compensate when aim direction is null (for example when you haven't set any primary input yet)
@@ -415,9 +415,9 @@ namespace MoreMountains.TopDownEngine
 				_reticle = (GameObject)Instantiate(Reticle);
 				_reticle.transform.SetParent(GUIManager.Instance.MainCanvas.transform);
 				_reticle.transform.localScale = Vector3.one;
-				if (_reticle.gameObject.MMGetComponentNoAlloc<MMUIFollowMouse>() != null)
+				if (_reticle.gameObject.GetComponentNoAlloc<MMUIFollowMouse>() != null)
 				{
-					_reticle.gameObject.MMGetComponentNoAlloc<MMUIFollowMouse>().TargetCanvas = GUIManager.Instance.MainCanvas;
+					_reticle.gameObject.GetComponentNoAlloc<MMUIFollowMouse>().TargetCanvas = GUIManager.Instance.MainCanvas;
 				}
 			}
 		}
@@ -457,7 +457,7 @@ namespace MoreMountains.TopDownEngine
 			if (ReticleMovesWithSlopes)
 			{
 				// we cast a ray from above
-				RaycastHit groundCheck = MMDebug.Raycast3D(_reticlePosition + Vector3.up * MaximumSlopeElevation / 2f, Vector3.down, MaximumSlopeElevation, ReticleObstacleMask, Color.cyan, true);
+				RaycastHit groundCheck = PhysicsDebug.Raycast3D(_reticlePosition + Vector3.up * MaximumSlopeElevation / 2f, Vector3.down, MaximumSlopeElevation, ReticleObstacleMask, Color.cyan, true);
 				if (groundCheck.collider != null)
 				{
 					_reticlePosition.y = groundCheck.point.y + ReticleHeight;

@@ -113,7 +113,7 @@ namespace MoreMountains.TopDownEngine
 				_temp3DVector = _direction;
 				_temp3DVector.z = _direction.y;
 				_temp3DVector.y = 0;
-				_hit = MMDebug.Raycast3D(_collider.bounds.center, _temp3DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
+				_hit = PhysicsDebug.Raycast3D(_collider.bounds.center, _temp3DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
 				if (_topDownController.CollidingWithCardinalObstacle)
 				{
 					PickNewDirection();
@@ -122,7 +122,7 @@ namespace MoreMountains.TopDownEngine
 			else
 			{
 				_temp2DVector = _direction;
-				_hit2D = MMDebug.RayCast(_collider2D.bounds.center, _temp2DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
+				_hit2D = PhysicsDebug.RayCast(_collider2D.bounds.center, _temp2DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
 				if (_topDownController.CollidingWithCardinalObstacle)
 				{
 					PickNewDirection();
@@ -159,7 +159,7 @@ namespace MoreMountains.TopDownEngine
 							}
 						}
 
-						_hit = MMDebug.Raycast3D(_collider.bounds.center, _temp3DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
+						_hit = PhysicsDebug.Raycast3D(_collider.bounds.center, _temp3DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
 						if (_hit.collider == null)
 						{
 							_direction = _temp3DVector;
@@ -189,7 +189,7 @@ namespace MoreMountains.TopDownEngine
 							}
 						}
 
-						_hit2D = MMDebug.RayCast(_collider2D.bounds.center, _temp2DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
+						_hit2D = PhysicsDebug.RayCast(_collider2D.bounds.center, _temp2DVector, ObstaclesDetectionDistance, ObstacleLayerMask, Color.gray);
 						if (_hit2D.collider == null)
 						{
 							_direction = _temp2DVector;

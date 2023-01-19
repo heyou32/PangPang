@@ -31,7 +31,7 @@ namespace MoreMountains.Feedbacks
 		public Modes Mode = Modes.PlayNext;
 		/// the index of the song to play
 		[Tooltip("the index of the song to play")]
-		[MMEnumCondition("Mode", (int)Modes.PlaySongAt)]
+		[EnumCondition("Mode", (int)Modes.PlaySongAt)]
 		public int SongIndex = 0;
         
 		protected Coroutine _coroutine;

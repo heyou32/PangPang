@@ -47,10 +47,10 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Initialization()
 		{
-			if (GetComponent<MMMultipleObjectPooler>() != null)
-			{
-				ObjectPooler = GetComponent<MMMultipleObjectPooler>();
-			}
+			//if (GetComponent<MMMultipleObjectPooler>() != null)
+			//{
+			//	ObjectPooler = GetComponent<MMMultipleObjectPooler>();
+			//}
 			if (GetComponent<MMSimpleObjectPooler>() != null)
 			{
 				ObjectPooler = GetComponent<MMSimpleObjectPooler>();
@@ -91,10 +91,10 @@ namespace MoreMountains.TopDownEngine
 
 			// we activate the object
 			nextGameObject.gameObject.SetActive(true);
-			nextGameObject.gameObject.MMGetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
+			nextGameObject.gameObject.GetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
 
 			// we check if our object has an Health component, and if yes, we revive our character
-			Health objectHealth = nextGameObject.gameObject.MMGetComponentNoAlloc<Health> ();
+			Health objectHealth = nextGameObject.gameObject.GetComponentNoAlloc<Health> ();
 			if (objectHealth != null) 
 			{
 				objectHealth.Revive ();

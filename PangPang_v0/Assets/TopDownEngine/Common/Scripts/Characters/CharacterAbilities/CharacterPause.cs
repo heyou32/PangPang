@@ -43,7 +43,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected override void HandleInput()
 		{
-			if (_inputManager.PauseButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.PauseButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				TriggerPause();
 			}

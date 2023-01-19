@@ -72,7 +72,7 @@ namespace MoreMountains.Feedbacks
 					break;
 				case DebugLogModes.DebugLogTime:
 					string color = "#" + ColorUtility.ToHtmlStringRGB(DebugColor);
-					MMDebug.DebugLogTime(DebugMessage, color, 3, DisplayFrameCount);
+					PhysicsDebug.DebugLogTime(DebugMessage, color, 3, DisplayFrameCount);
 					break;
 			}
 		}

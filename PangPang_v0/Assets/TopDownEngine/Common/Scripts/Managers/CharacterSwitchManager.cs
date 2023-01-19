@@ -91,7 +91,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			if (_inputManager.SwitchCharacterButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.SwitchCharacterButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				SwitchCharacter();
 			}
@@ -132,7 +132,7 @@ namespace MoreMountains.TopDownEngine
 			// we keep the health if needed
 			if (CommonHealth)
 			{
-				_instantiatedCharacters[CurrentIndex].gameObject.MMGetComponentNoAlloc<Health>().SetHealth(LevelManager.Instance.Players[0].gameObject.MMGetComponentNoAlloc<Health>().CurrentHealth);
+				_instantiatedCharacters[CurrentIndex].gameObject.GetComponentNoAlloc<Health>().SetHealth(LevelManager.Instance.Players[0].gameObject.GetComponentNoAlloc<Health>().CurrentHealth);
 			}
 
 			// we put it in the same state the old one was in

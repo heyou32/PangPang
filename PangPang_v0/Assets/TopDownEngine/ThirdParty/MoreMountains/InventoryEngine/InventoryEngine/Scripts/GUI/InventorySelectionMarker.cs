@@ -45,7 +45,7 @@ namespace MoreMountains.InventoryEngine
 				return;
 			}
 
-			if (_currentSelection.gameObject.MMGetComponentNoAlloc<InventorySlot>() == null)
+			if (_currentSelection.gameObject.GetComponentNoAlloc<InventorySlot>() == null)
 			{
 				return;
 			}

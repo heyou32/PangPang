@@ -24,13 +24,13 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="collider">Other.</param>
 		protected override void Pick(GameObject picker)
 		{
-			Character character = picker.gameObject.MMGetComponentNoAlloc<Character>();
+			Character character = picker.gameObject.GetComponentNoAlloc<Character>();
 			if (OnlyForPlayerCharacter && (character != null) && (_character.CharacterType != Character.CharacterTypes.Player))
 			{
 				return;
 			}
 
-			Health characterHealth = picker.gameObject.MMGetComponentNoAlloc<Health>();
+			Health characterHealth = picker.gameObject.GetComponentNoAlloc<Health>();
 			// else, we give health to the player
 			if (characterHealth != null)
 			{

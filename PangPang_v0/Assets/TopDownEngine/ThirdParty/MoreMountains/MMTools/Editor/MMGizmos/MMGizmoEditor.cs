@@ -233,7 +233,7 @@ namespace MoreMountains.Tools
 			switch (mmGizmo.PositionMode)
 			{
 				case MMGizmo.PositionModes.Point:
-					MMDebug.DrawGizmoPoint(ComputeGizmoPosition(mmGizmo, mmGizmo._vector3Zero), mmGizmo.GizmoColor, mmGizmo.PositionSize);
+					PhysicsDebug.DrawGizmoPoint(ComputeGizmoPosition(mmGizmo, mmGizmo._vector3Zero), mmGizmo.GizmoColor, mmGizmo.PositionSize);
 					break;
 				case MMGizmo.PositionModes.Cube:
 					Gizmos.DrawCube(ComputeGizmoPosition(mmGizmo, mmGizmo._vector3Zero), Vector3.one * mmGizmo.PositionSize);

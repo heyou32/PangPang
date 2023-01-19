@@ -165,7 +165,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			RaycastHit2D raycast = MMDebug.RayCast(_controller.ColliderCenter, _direction, 1f, ObstaclesLayerMask, MMColors.Gold, true);
+			RaycastHit2D raycast = PhysicsDebug.RayCast(_controller.ColliderCenter, _direction, 1f, ObstaclesLayerMask, MMColors.Gold, true);
 
 			// if the agent is colliding with something, make it turn around
 			if (raycast)

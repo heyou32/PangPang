@@ -24,19 +24,19 @@ namespace MoreMountains.Tools
 		public Vector3 NormalToSpawnPlane = Vector3.up;
 		/// the minimum distance to the origin of the spawn at which objects can be spawned
 		[Tooltip("the minimum distance to the origin of the spawn at which objects can be spawned")]
-		[MMEnumCondition("Shape", (int)MMSpawnAroundShapes.Sphere)]
+		[EnumCondition("Shape", (int)MMSpawnAroundShapes.Sphere)]
 		public float MinimumSphereRadius = 1f;
 		/// the maximum distance to the origin of the spawn at which objects can be spawned
 		[Tooltip("the maximum distance to the origin of the spawn at which objects can be spawned")]
-		[MMEnumCondition("Shape", (int)MMSpawnAroundShapes.Sphere)]
+		[EnumCondition("Shape", (int)MMSpawnAroundShapes.Sphere)]
 		public float MaximumSphereRadius = 2f;
 		/// the minimum size of the cube's base
 		[Tooltip("the minimum size of the cube's base")]
-		[MMEnumCondition("Shape", (int)MMSpawnAroundShapes.Cube)]
+		[EnumCondition("Shape", (int)MMSpawnAroundShapes.Cube)]
 		public Vector3 MinimumCubeBaseSize = Vector3.one;
 		/// the maximum size of the cube's base
 		[Tooltip("the maximum size of the cube's base")]
-		[MMEnumCondition("Shape", (int)MMSpawnAroundShapes.Cube)]
+		[EnumCondition("Shape", (int)MMSpawnAroundShapes.Cube)]
 		public Vector3 MaximumCubeBaseSize = new Vector3(2f, 2f, 2f);
 
 		[Header("NormalAxisOffset")]

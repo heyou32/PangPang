@@ -80,7 +80,7 @@ namespace MoreMountains.MMInterface
 			_contentLength = 0;
 			foreach (Transform tr in Content.transform) 
 			{ 
-				_elementWidth = tr.gameObject.MMGetComponentNoAlloc<RectTransform>().sizeDelta.x;
+				_elementWidth = tr.gameObject.GetComponentNoAlloc<RectTransform>().sizeDelta.x;
 				_contentLength++;
 			}
 			_spacing = Content.spacing;

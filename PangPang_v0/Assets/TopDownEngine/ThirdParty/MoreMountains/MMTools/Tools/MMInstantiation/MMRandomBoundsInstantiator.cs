@@ -37,17 +37,17 @@ namespace MoreMountains.Tools
 		/// the scale mode to use (uniform scales the whole object, Vector3 randomizes x, y and z scale elements
 		public ScaleModes ScaleMode = ScaleModes.Uniform;
 		/// the min scale to use in uniform mode
-		[MMEnumCondition("ScaleMode", (int)ScaleModes.Uniform)]
+		[EnumCondition("ScaleMode", (int)ScaleModes.Uniform)]
 		public float MinScale = 1f;
 		/// the max scale to use in uniform mode
-		[MMEnumCondition("ScaleMode", (int)ScaleModes.Uniform)]
+		[EnumCondition("ScaleMode", (int)ScaleModes.Uniform)]
 		public float MaxScale = 1f;
 
 		/// the min scale to use in vector3 mode
-		[MMEnumCondition("ScaleMode", (int)ScaleModes.Vector3)]
+		[EnumCondition("ScaleMode", (int)ScaleModes.Vector3)]
 		public Vector3 MinVectorScale = Vector3.one;
 		/// the max scale to use in vector3 mode
-		[MMEnumCondition("ScaleMode", (int)ScaleModes.Vector3)]
+		[EnumCondition("ScaleMode", (int)ScaleModes.Vector3)]
 		public Vector3 MaxVectorScale = Vector3.one;
 
 		[Header("Test")]

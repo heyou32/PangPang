@@ -31,15 +31,15 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("if this is true, health will refill itself when not at full health")]
 		public bool RefillHealth = true;
 		/// the amount of health per second to restore when in linear mode
-		[MMEnumCondition("RefillMode", (int)RefillModes.Linear)]
+		[EnumCondition("RefillMode", (int)RefillModes.Linear)]
 		[Tooltip("the amount of health per second to restore when in linear mode")]
 		public float HealthPerSecond;
 		/// the amount of health to restore per burst when in burst mode
-		[MMEnumCondition("RefillMode", (int)RefillModes.Bursts)]
+		[EnumCondition("RefillMode", (int)RefillModes.Bursts)]
 		[Tooltip("the amount of health to restore per burst when in burst mode")]
 		public float HealthPerBurst = 5;
 		/// the duration between two health bursts, in seconds
-		[MMEnumCondition("RefillMode", (int)RefillModes.Bursts)]
+		[EnumCondition("RefillMode", (int)RefillModes.Bursts)]
 		[Tooltip("the duration between two health bursts, in seconds")]
 		public float DurationBetweenBursts = 2f;
 

@@ -160,7 +160,7 @@ namespace MoreMountains.TopDownEngine
 			// we return the first unobscured target
 			foreach (Transform t in _potentialTargets)
 			{
-				_boxcastDirection = (Vector2)(t.gameObject.MMGetComponentNoAlloc<Collider2D>().bounds.center - _collider.bounds.center);
+				_boxcastDirection = (Vector2)(t.gameObject.GetComponentNoAlloc<Collider2D>().bounds.center - _collider.bounds.center);
                 
 				if (ObstaclesDetectionMode == ObstaclesDetectionModes.Boxcast)
 				{
@@ -168,7 +168,7 @@ namespace MoreMountains.TopDownEngine
 				}
 				else
 				{
-					_hit = MMDebug.RayCast(_collider.bounds.center, _boxcastDirection, _boxcastDirection.magnitude,
+					_hit = PhysicsDebug.RayCast(_collider.bounds.center, _boxcastDirection, _boxcastDirection.magnitude,
 						ObstacleMask, Color.yellow, true);
 				}
                 

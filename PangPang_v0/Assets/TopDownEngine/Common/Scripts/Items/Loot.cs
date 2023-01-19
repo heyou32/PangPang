@@ -29,17 +29,17 @@ namespace  MoreMountains.TopDownEngine
 
 		/// the object to loot, when in LootMode
 		[Tooltip("the object to loot, when in LootMode")]
-		[MMEnumCondition("LootMode", (int) LootModes.Unique)]
+		[EnumCondition("LootMode", (int) LootModes.Unique)]
 		public GameObject GameObjectToLoot;
         
 		/// a loot table defining what objects to spawn
 		[Tooltip("a loot table defining what objects to spawn")]
-		[MMEnumCondition("LootMode", (int) LootModes.LootTable)]
+		[EnumCondition("LootMode", (int) LootModes.LootTable)]
 		public MMLootTableGameObject LootTable;
         
 		/// a loot table scriptable object defining what objects to spawn
 		[Tooltip("a loot table scriptable object defining what objects to spawn")]
-		[MMEnumCondition("LootMode", (int) LootModes.LootTableScriptableObject)]
+		[EnumCondition("LootMode", (int) LootModes.LootTableScriptableObject)]
 		public MMLootTableGameObjectSO LootTableSO;
 
 		[Header("Conditions")] 
@@ -132,7 +132,7 @@ namespace  MoreMountains.TopDownEngine
 		public bool SpawnLootButton;
         
 		public static List<MMSimpleObjectPooler> SimplePoolers = new List<MMSimpleObjectPooler>();
-		public static List<MMMultipleObjectPooler> MultiplePoolers = new List<MMMultipleObjectPooler>();
+		//public static List<MMMultipleObjectPooler> MultiplePoolers = new List<MMMultipleObjectPooler>();
 
 		protected Health _health;
 		protected GameObject _objectToSpawn;
@@ -141,7 +141,7 @@ namespace  MoreMountains.TopDownEngine
 		protected RaycastHit2D _raycastHit2D;
 		protected Collider[] _overlapBox;
 		protected MMSimpleObjectPooler _simplePooler;
-		protected MMMultipleObjectPooler _multipleObjectPooler;
+		//protected MMMultipleObjectPooler _multipleObjectPooler;
         
 		/// <summary>
 		/// On Awake we grab the health component if there's one, and initialize our loot table
@@ -194,10 +194,10 @@ namespace  MoreMountains.TopDownEngine
 					_simplePooler = FindSimplePooler();
 					break;
 				case LootModes.LootTable:
-					_multipleObjectPooler = FindMultiplePooler();
+					//_multipleObjectPooler = FindMultiplePooler();
 					break;
 				case LootModes.LootTableScriptableObject:
-					_multipleObjectPooler = FindMultiplePooler();
+					//_multipleObjectPooler = FindMultiplePooler();
 					break;
 			}
 		}
@@ -223,49 +223,49 @@ namespace  MoreMountains.TopDownEngine
 			return pooler;
 		}
         
-		protected virtual MMMultipleObjectPooler FindMultiplePooler()
-		{
-			foreach (MMMultipleObjectPooler multiplePooler in MultiplePoolers)
-			{
-				if ((multiplePooler != null) && (multiplePooler.MutualizedPoolName == MutualizedPoolName)) 
-				{
-					return multiplePooler;
-				}
-			}
-			// if we haven't found one, we create one
-			GameObject newObject = new GameObject("[MMMultipleObjectPooler] "+MutualizedPoolName);
-			MMMultipleObjectPooler pooler = newObject.AddComponent<MMMultipleObjectPooler>();
-			pooler.MutualizeWaitingPools = true;
-			pooler.MutualizedPoolName = MutualizedPoolName;
-			pooler.NestUnderThis = true;
-			pooler.Pool = new List<MMMultipleObjectPoolerObject>();
-			if (LootMode == LootModes.LootTable)
-			{
-				foreach (MMLootGameObject loot in LootTable.ObjectsToLoot)
-				{
-					MMMultipleObjectPoolerObject objectToPool = new MMMultipleObjectPoolerObject();
-					objectToPool.PoolSize = PoolSize * (int)loot.Weight;
-					objectToPool.GameObjectToPool = loot.Loot;
-					pooler.Pool.Add(objectToPool);
-				}
-			}
-			else if (LootMode == LootModes.LootTableScriptableObject)
-			{
-				foreach (MMLootGameObject loot in LootTableSO.LootTable.ObjectsToLoot)
-				{
-					MMMultipleObjectPoolerObject objectToPool = new MMMultipleObjectPoolerObject
-					{
-						PoolSize = PoolSize * (int)loot.Weight,
-						GameObjectToPool = loot.Loot
-					};
-					pooler.Pool.Add(objectToPool);
-				}
-			}
-			pooler.FillObjectPool();
-			pooler.Owner = MultiplePoolers;
-			MultiplePoolers.Add(pooler);
-			return pooler;
-		}
+		//protected virtual MMMultipleObjectPooler FindMultiplePooler()
+		//{
+		//	foreach (MMMultipleObjectPooler multiplePooler in MultiplePoolers)
+		//	{
+		//		if ((multiplePooler != null) && (multiplePooler.MutualizedPoolName == MutualizedPoolName)) 
+		//		{
+		//			return multiplePooler;
+		//		}
+		//	}
+		//	// if we haven't found one, we create one
+		//	GameObject newObject = new GameObject("[MMMultipleObjectPooler] "+MutualizedPoolName);
+		//	MMMultipleObjectPooler pooler = newObject.AddComponent<MMMultipleObjectPooler>();
+		//	pooler.MutualizeWaitingPools = true;
+		//	pooler.MutualizedPoolName = MutualizedPoolName;
+		//	pooler.NestUnderThis = true;
+		//	pooler.Pool = new List<MMMultipleObjectPoolerObject>();
+		//	if (LootMode == LootModes.LootTable)
+		//	{
+		//		foreach (MMLootGameObject loot in LootTable.ObjectsToLoot)
+		//		{
+		//			MMMultipleObjectPoolerObject objectToPool = new MMMultipleObjectPoolerObject();
+		//			objectToPool.PoolSize = PoolSize * (int)loot.Weight;
+		//			objectToPool.GameObjectToPool = loot.Loot;
+		//			pooler.Pool.Add(objectToPool);
+		//		}
+		//	}
+		//	else if (LootMode == LootModes.LootTableScriptableObject)
+		//	{
+		//		foreach (MMLootGameObject loot in LootTableSO.LootTable.ObjectsToLoot)
+		//		{
+		//			MMMultipleObjectPoolerObject objectToPool = new MMMultipleObjectPoolerObject
+		//			{
+		//				PoolSize = PoolSize * (int)loot.Weight,
+		//				GameObjectToPool = loot.Loot
+		//			};
+		//			pooler.Pool.Add(objectToPool);
+		//		}
+		//	}
+		//	pooler.FillObjectPool();
+		//	pooler.Owner = MultiplePoolers;
+		//	MultiplePoolers.Add(pooler);
+		//	return pooler;
+		//}
 
 		/// <summary>
 		/// This method spawns the specified loot after applying a delay (if there's one)
@@ -318,7 +318,7 @@ namespace  MoreMountains.TopDownEngine
 						_spawnedObject = _simplePooler.GetPooledGameObject();
 						break;
 					case LootModes.LootTable: case LootModes.LootTableScriptableObject:
-						_spawnedObject = _multipleObjectPooler.GetPooledGameObject();
+						//_spawnedObject = _multipleObjectPooler.GetPooledGameObject();
 						break;
 				}
 			}

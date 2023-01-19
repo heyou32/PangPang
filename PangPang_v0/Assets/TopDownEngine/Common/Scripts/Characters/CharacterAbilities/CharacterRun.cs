@@ -42,15 +42,15 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_inputManager.PrimaryMovement.magnitude > AutoRunThreshold)
 				{
-					_inputManager.RunButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);
+					_inputManager.RunButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed);
 				}
 			}
 
-			if (_inputManager.RunButton.State.CurrentState == MMInput.ButtonStates.ButtonDown || _inputManager.RunButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed)
+			if (_inputManager.RunButton.State.CurrentState == InputClass.ButtonStates.ButtonDown || _inputManager.RunButton.State.CurrentState == InputClass.ButtonStates.ButtonPressed)
 			{
 				RunStart();
 			}				
-			if (_inputManager.RunButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
+			if (_inputManager.RunButton.State.CurrentState == InputClass.ButtonStates.ButtonUp)
 			{
 				RunStop();
 			}
@@ -60,7 +60,7 @@ namespace MoreMountains.TopDownEngine
 				{
 					if (_inputManager.PrimaryMovement.magnitude <= AutoRunThreshold)
 					{
-						_inputManager.RunButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);
+						_inputManager.RunButton.State.ChangeState(InputClass.ButtonStates.ButtonUp);
 						RunStop();
 					}
 				}

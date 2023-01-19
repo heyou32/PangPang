@@ -52,18 +52,18 @@ namespace MoreMountains.Tools
 		/// the selected format method 
 		public FormatMethods FormatMethod = FormatMethods.Choices;
 		/// whether or not values should be floored before displaying them
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Explicit)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Explicit)]
 		public bool FloorValues = true;
 		/// the format (standard Unity ToString) to use when displaying the time left in the text field
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Explicit)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Explicit)]
 		public string Format = "00.00";
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Choices)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Choices)]
 		public bool Hours = false;
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Choices)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Choices)]
 		public bool Minutes = true;
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Choices)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Choices)]
 		public bool Seconds = true;
-		[MMEnumCondition("FormatMethod", (int)FormatMethods.Choices)]
+		[EnumCondition("FormatMethod", (int)FormatMethods.Choices)]
 		public bool Milliseconds = false;
 
 

@@ -184,7 +184,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				// if 3D
 				_origin = SpawnPosition;
-				_hit = MMDebug.Raycast3D(_origin, _randomSpreadDirection, HitscanMaxDistance, HitscanTargetLayers, Color.red, true);
+				_hit = PhysicsDebug.Raycast3D(_origin, _randomSpreadDirection, HitscanMaxDistance, HitscanTargetLayers, Color.red, true);
                 
 				// if we've hit something, our destination is the raycast hit
 				if (_hit.transform != null)
@@ -207,7 +207,7 @@ namespace MoreMountains.TopDownEngine
 
 				// we cast a ray in front of the weapon to detect an obstacle
 				_origin = SpawnPosition;
-				_hit2D = MMDebug.RayCast(_origin, _randomSpreadDirection, HitscanMaxDistance, HitscanTargetLayers, Color.red, true);
+				_hit2D = PhysicsDebug.RayCast(_origin, _randomSpreadDirection, HitscanMaxDistance, HitscanTargetLayers, Color.red, true);
 				if (_hit2D)
 				{
 					_hitObject = _hit2D.collider.gameObject;
@@ -231,7 +231,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			_health = _hitObject.MMGetComponentNoAlloc<Health>();
+			_health = _hitObject.GetComponentNoAlloc<Health>();
 
 			if (_health == null)
 			{

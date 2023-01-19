@@ -60,7 +60,7 @@ namespace MoreMountains.TopDownEngine
 		{
 			if (RequiresPlayerCharacter)
 			{
-				_character = collider.MMGetComponentNoAlloc<Character>();
+				_character = collider.GetComponentNoAlloc<Character>();
 				if (_character == null)
 				{
 					return false;

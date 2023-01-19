@@ -38,10 +38,10 @@ namespace MoreMountains.Tools
 		/// the selected tracker mode
 		public TrackerModes TrackerMode = TrackerModes.Basic;
 		/// when in ForcedBounds mode, the value to which the slider's lowest bound should be remapped
-		[MMEnumCondition("TrackerMode", (int)TrackerModes.ForcedBounds)]
+		[EnumCondition("TrackerMode", (int)TrackerModes.ForcedBounds)]
 		public float MinBound;
 		/// when in ForcedBounds mode, the value to which the slider's highest bound should be remapped
-		[MMEnumCondition("TrackerMode", (int)TrackerModes.ForcedBounds)]
+		[EnumCondition("TrackerMode", (int)TrackerModes.ForcedBounds)]
 		public float MaxBound;
 		/// a slider used to move the particle system through time at runtime
 		[Range(0f, 1f)]

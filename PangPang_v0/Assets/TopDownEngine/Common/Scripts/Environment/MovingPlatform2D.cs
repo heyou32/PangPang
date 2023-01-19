@@ -24,7 +24,7 @@ namespace MoreMountains.TopDownEngine
         
 		protected virtual void AttachCharacterToMovingPlatform(Collider2D collider)
 		{
-			_topdDownController2D = collider.gameObject.MMGetComponentNoAlloc<TopDownController2D>();
+			_topdDownController2D = collider.gameObject.GetComponentNoAlloc<TopDownController2D>();
 			if (_topdDownController2D != null)
 			{
 				_topdDownController2D.SetMovingPlatform(this);
@@ -44,7 +44,7 @@ namespace MoreMountains.TopDownEngine
 
 		protected virtual void DetachCharacterFromPlatform(Collider2D collider)
 		{
-			_topdDownController2D = collider.gameObject.MMGetComponentNoAlloc<TopDownController2D>();
+			_topdDownController2D = collider.gameObject.GetComponentNoAlloc<TopDownController2D>();
 			if (_topdDownController2D != null)
 			{
 				_topdDownController2D.SetMovingPlatform(null);

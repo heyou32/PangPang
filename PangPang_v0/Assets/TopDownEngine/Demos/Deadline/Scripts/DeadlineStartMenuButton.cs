@@ -38,10 +38,10 @@ namespace MoreMountains.TopDownEngine
 			{
 				case Types.NewGame:
 					DeleteProgress();
-					MMSceneLoadingManager.LoadScene(CharacterSelectionSceneName);
+					SceneLoadingManager.LoadScene(CharacterSelectionSceneName);
 					break;
 				case Types.Continue:
-					MMSceneLoadingManager.LoadScene(LevelSelectionSceneName);
+					SceneLoadingManager.LoadScene(LevelSelectionSceneName);
 					break;
 			}
 		}

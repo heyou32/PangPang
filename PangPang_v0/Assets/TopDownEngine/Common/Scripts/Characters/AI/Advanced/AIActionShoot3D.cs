@@ -118,7 +118,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_weaponAim == null)
 				{
-					_weaponAim = TargetHandleWeaponAbility.CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim>();
+					_weaponAim = TargetHandleWeaponAbility.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
 				}
 
 				if (_weaponAim != null)
@@ -169,8 +169,8 @@ namespace MoreMountains.TopDownEngine
 			base.OnEnterState();
 			_numberOfShoots = 0;
 			_shooting = true;
-			_weaponAim = TargetHandleWeaponAbility.CurrentWeapon.gameObject.MMGetComponentNoAlloc<WeaponAim>();
-			_projectileWeapon = TargetHandleWeaponAbility.CurrentWeapon.gameObject.MMGetComponentNoAlloc<ProjectileWeapon>();
+			_weaponAim = TargetHandleWeaponAbility.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
+			_projectileWeapon = TargetHandleWeaponAbility.CurrentWeapon.gameObject.GetComponentNoAlloc<ProjectileWeapon>();
 		}
 
 		/// <summary>

@@ -50,23 +50,23 @@ namespace MoreMountains.Tools
 		public Color GizmoColor = MMColors.ReunoYellow; 
 		/// the shape of the gizmo when in position mode
 		[Tooltip("the shape of the gizmo when in position mode")]
-		[MMEnumCondition("GizmoType", (int)GizmoTypes.Position)]
+		[EnumCondition("GizmoType", (int)GizmoTypes.Position)]
 		public PositionModes PositionMode = PositionModes.Point; 
 		/// the texture to display as a gizmo when in position & texture mode
 		[Tooltip("the texture to display as a gizmo when in position & texture mode")]
-		[MMEnumCondition("PositionMode", (int)PositionModes.Texture)]
+		[EnumCondition("PositionMode", (int)PositionModes.Texture)]
 		public Texture PositionTexture; 
 		/// the size of the texture to display as a gizmo
 		[Tooltip("the size of the texture to display as a gizmo")]
-		[MMEnumCondition("PositionMode", (int)PositionModes.Texture)]
+		[EnumCondition("PositionMode", (int)PositionModes.Texture)]
 		public Vector2 TextureSize = new Vector2(50f,50f); 
 		/// the size of the gizmo when in position mode
 		[Tooltip("the size of the gizmo when in position mode")]
-		[MMEnumCondition("GizmoType", (int)GizmoTypes.Position)]
+		[EnumCondition("GizmoType", (int)GizmoTypes.Position)]
 		public float PositionSize = 0.2f; 
 		/// whether to display the collider gizmo as a wire or a full mesh
 		[Tooltip("whether to display the collider gizmo as a wire or a full mesh")]
-		[MMEnumCondition("GizmoType", (int)GizmoTypes.Collider)]
+		[EnumCondition("GizmoType", (int)GizmoTypes.Collider)]
 		public ColliderRenderTypes ColliderRenderType = ColliderRenderTypes.Full;
 		/// the distance from the scene view camera beyond which the gizmo won't be displayed
 		[Tooltip("the distance from the scene view camera beyond which the gizmo won't be displayed")]
@@ -111,7 +111,7 @@ namespace MoreMountains.Tools
 		public TextModes TextMode; 
 		/// when in CustomText mode, the text to display on that gizmo
 		[Tooltip("when in CustomText mode, the text to display on that gizmo")]
-		[MMEnumCondition("TextMode", (int)TextModes.CustomText)]
+		[EnumCondition("TextMode", (int)TextModes.CustomText)]
 		public string TextToDisplay = "Some Text"; 
 		/// the offset to apply to the text
 		[Tooltip("the offset to apply to the text")]

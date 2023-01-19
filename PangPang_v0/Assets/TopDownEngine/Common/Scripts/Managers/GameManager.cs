@@ -467,7 +467,7 @@ namespace MoreMountains.TopDownEngine
 
 			if (LevelManager.Instance.Players[0] != null)
 			{
-				if (LevelManager.Instance.Players[0].gameObject.MMGetComponentNoAlloc<CharacterPersistence>() != null)
+				if (LevelManager.Instance.Players[0].gameObject.GetComponentNoAlloc<CharacterPersistence>() != null)
 				{
 					Destroy(LevelManager.Instance.Players[0].gameObject);	
 				}

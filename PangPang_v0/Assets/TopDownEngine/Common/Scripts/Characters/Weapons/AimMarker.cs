@@ -23,15 +23,15 @@ namespace MoreMountains.TopDownEngine
 		public Vector3 Offset;
 		/// When in Interpolate mode, the duration of the movement animation
 		[Tooltip("When in Interpolate mode, the duration of the movement animation")]
-		[MMEnumCondition("MovementMode", (int)MovementModes.Interpolate)]
+		[EnumCondition("MovementMode", (int)MovementModes.Interpolate)]
 		public float MovementDuration = 0.2f;
 		/// When in Interpolate mode, the curve to animate the movement on
 		[Tooltip("When in Interpolate mode, the curve to animate the movement on")]
-		[MMEnumCondition("MovementMode", (int)MovementModes.Interpolate)]
+		[EnumCondition("MovementMode", (int)MovementModes.Interpolate)]
 		public MMTween.MMTweenCurve MovementCurve = MMTween.MMTweenCurve.EaseInCubic;
 		/// When in Interpolate mode, the delay before the marker moves when changing target
 		[Tooltip("When in Interpolate mode, the delay before the marker moves when changing target")]
-		[MMEnumCondition("MovementMode", (int)MovementModes.Interpolate)]
+		[EnumCondition("MovementMode", (int)MovementModes.Interpolate)]
 		public float MovementDelay = 0f;
 
 		[Header("Feedbacks")]

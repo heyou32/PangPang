@@ -72,11 +72,11 @@ namespace MoreMountains.Tools
 		[MMCondition("InterpolatePosition", true)]
 		public float FollowPositionSpeed = 10f;
 		/// higher values mean more damping, less spring, low values mean less damping, more spring
-		[MMEnumCondition("FollowPositionMode", (int)FollowModes.MMSpring)] 
+		[EnumCondition("FollowPositionMode", (int)FollowModes.MMSpring)] 
 		[Range(0.01f, 1.0f)]
 		public float PositionSpringDamping = 0.3f;
 		/// the frequency at which the spring should "vibrate", in Hz (1 : the spring will do one full period in one second)
-		[MMEnumCondition("FollowPositionMode", (int)FollowModes.MMSpring)]
+		[EnumCondition("FollowPositionMode", (int)FollowModes.MMSpring)]
 		public float PositionSpringFrequency = 3f;
 
 		[Header("Rotation Interpolation")]

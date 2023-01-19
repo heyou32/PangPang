@@ -71,33 +71,33 @@ namespace MoreMountains.TopDownEngine
 		public bool RotateInputBasedOnCameraDirection = false;
         
 		/// the jump button, used for jumps and validation
-		public MMInput.IMButton JumpButton { get; protected set; }
+		public InputClass.IMButton JumpButton { get; protected set; }
 		/// the run button
-		public MMInput.IMButton RunButton { get; protected set; }
+		public InputClass.IMButton RunButton { get; protected set; }
 		/// the dash button
-		public MMInput.IMButton DashButton { get; protected set; }
+		public InputClass.IMButton DashButton { get; protected set; }
 		/// the crouch button
-		public MMInput.IMButton CrouchButton { get; protected set; }
+		public InputClass.IMButton CrouchButton { get; protected set; }
 		/// the shoot button
-		public MMInput.IMButton ShootButton { get; protected set; }
+		public InputClass.IMButton ShootButton { get; protected set; }
 		/// the activate button, used for interactions with zones
-		public MMInput.IMButton InteractButton { get; protected set; }
+		public InputClass.IMButton InteractButton { get; protected set; }
 		/// the shoot button
-		public MMInput.IMButton SecondaryShootButton { get; protected set; }
+		public InputClass.IMButton SecondaryShootButton { get; protected set; }
 		/// the reload button
-		public MMInput.IMButton ReloadButton { get; protected set; }
+		public InputClass.IMButton ReloadButton { get; protected set; }
 		/// the pause button
-		public MMInput.IMButton PauseButton { get; protected set; }
+		public InputClass.IMButton PauseButton { get; protected set; }
 		/// the time control button
-		public MMInput.IMButton TimeControlButton { get; protected set; }
+		public InputClass.IMButton TimeControlButton { get; protected set; }
 		/// the button used to switch character (either via model or prefab switch)
-		public MMInput.IMButton SwitchCharacterButton { get; protected set; }
+		public InputClass.IMButton SwitchCharacterButton { get; protected set; }
 		/// the switch weapon button
-		public MMInput.IMButton SwitchWeaponButton { get; protected set; }
+		public InputClass.IMButton SwitchWeaponButton { get; protected set; }
 		/// the shoot axis, used as a button (non analogic)
-		public MMInput.ButtonStates ShootAxis { get; protected set; }
+		public InputClass.ButtonStates ShootAxis { get; protected set; }
 		/// the shoot axis, used as a button (non analogic)
-		public MMInput.ButtonStates SecondaryShootAxis { get; protected set; }
+		public InputClass.ButtonStates SecondaryShootAxis { get; protected set; }
 		/// the primary movement value (used to move the character around)
 		public Vector2 PrimaryMovement { get { return _primaryMovement; } }
 		/// the secondary movement (usually the right stick on a gamepad), used to aim
@@ -116,7 +116,7 @@ namespace MoreMountains.TopDownEngine
 		protected Camera _targetCamera;
 		protected bool _camera3D;
 		protected float _cameraAngle;
-		protected List<MMInput.IMButton> ButtonList;
+		protected List<InputClass.IMButton> ButtonList;
 		protected Vector2 _primaryMovement = Vector2.zero;
 		protected Vector2 _secondaryMovement = Vector2.zero;
 		protected float _cameraRotationInput = 0f;
@@ -200,19 +200,19 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void InitializeButtons()
 		{
-			ButtonList = new List<MMInput.IMButton> ();
-			ButtonList.Add(JumpButton = new MMInput.IMButton (PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
-			ButtonList.Add(RunButton  = new MMInput.IMButton (PlayerID, "Run", RunButtonDown, RunButtonPressed, RunButtonUp));
-			ButtonList.Add(InteractButton = new MMInput.IMButton(PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
-			ButtonList.Add(DashButton  = new MMInput.IMButton (PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
-			ButtonList.Add(CrouchButton  = new MMInput.IMButton (PlayerID, "Crouch", CrouchButtonDown, CrouchButtonPressed, CrouchButtonUp));
-			ButtonList.Add(SecondaryShootButton = new MMInput.IMButton(PlayerID, "SecondaryShoot", SecondaryShootButtonDown, SecondaryShootButtonPressed, SecondaryShootButtonUp));
-			ButtonList.Add(ShootButton = new MMInput.IMButton (PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp)); 
-			ButtonList.Add(ReloadButton = new MMInput.IMButton (PlayerID, "Reload", ReloadButtonDown, ReloadButtonPressed, ReloadButtonUp));
-			ButtonList.Add(SwitchWeaponButton = new MMInput.IMButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
-			ButtonList.Add(PauseButton = new MMInput.IMButton(PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
-			ButtonList.Add(TimeControlButton = new MMInput.IMButton(PlayerID, "TimeControl", TimeControlButtonDown, TimeControlButtonPressed, TimeControlButtonUp));
-			ButtonList.Add(SwitchCharacterButton = new MMInput.IMButton(PlayerID, "SwitchCharacter", SwitchCharacterButtonDown, SwitchCharacterButtonPressed, SwitchCharacterButtonUp));
+			ButtonList = new List<InputClass.IMButton> ();
+			ButtonList.Add(JumpButton = new InputClass.IMButton (PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
+			ButtonList.Add(RunButton  = new InputClass.IMButton (PlayerID, "Run", RunButtonDown, RunButtonPressed, RunButtonUp));
+			ButtonList.Add(InteractButton = new InputClass.IMButton(PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
+			ButtonList.Add(DashButton  = new InputClass.IMButton (PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
+			ButtonList.Add(CrouchButton  = new InputClass.IMButton (PlayerID, "Crouch", CrouchButtonDown, CrouchButtonPressed, CrouchButtonUp));
+			ButtonList.Add(SecondaryShootButton = new InputClass.IMButton(PlayerID, "SecondaryShoot", SecondaryShootButtonDown, SecondaryShootButtonPressed, SecondaryShootButtonUp));
+			ButtonList.Add(ShootButton = new InputClass.IMButton (PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp)); 
+			ButtonList.Add(ReloadButton = new InputClass.IMButton (PlayerID, "Reload", ReloadButtonDown, ReloadButtonPressed, ReloadButtonUp));
+			ButtonList.Add(SwitchWeaponButton = new InputClass.IMButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
+			ButtonList.Add(PauseButton = new InputClass.IMButton(PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
+			ButtonList.Add(TimeControlButton = new InputClass.IMButton(PlayerID, "TimeControl", TimeControlButtonDown, TimeControlButtonPressed, TimeControlButtonUp));
+			ButtonList.Add(SwitchCharacterButton = new InputClass.IMButton(PlayerID, "SwitchCharacter", SwitchCharacterButtonDown, SwitchCharacterButtonPressed, SwitchCharacterButtonUp));
 		}
 
 		/// <summary>
@@ -242,7 +242,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Update()
 		{		
-			if (!IsMobile && InputDetectionActive)
+			if (IsMobile && InputDetectionActive)
 			{	
 				SetMovement();	
 				SetSecondaryMovement ();
@@ -273,7 +273,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void GetInputButtons()
 		{
-			foreach(MMInput.IMButton button in ButtonList)
+			foreach(InputClass.IMButton button in ButtonList)
 			{
 				if (Input.GetButton(button.ButtonID))
 				{
@@ -296,15 +296,15 @@ namespace MoreMountains.TopDownEngine
 		public virtual void ProcessButtonStates()
 		{
 			// for each button, if we were at ButtonDown this frame, we go to ButtonPressed. If we were at ButtonUp, we're now Off
-			foreach (MMInput.IMButton button in ButtonList)
+			foreach (InputClass.IMButton button in ButtonList)
 			{
-				if (button.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+				if (button.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 				{
-					button.State.ChangeState(MMInput.ButtonStates.ButtonPressed);				
+					button.State.ChangeState(InputClass.ButtonStates.ButtonPressed);				
 				}	
-				if (button.State.CurrentState == MMInput.ButtonStates.ButtonUp)
+				if (button.State.CurrentState == InputClass.ButtonStates.ButtonUp)
 				{
-					button.State.ChangeState(MMInput.ButtonStates.Off);				
+					button.State.ChangeState(InputClass.ButtonStates.Off);				
 				}	
 			}
 		}
@@ -358,8 +358,8 @@ namespace MoreMountains.TopDownEngine
 		{
 			if (!IsMobile && InputDetectionActive)
 			{
-				ShootAxis = MMInput.ProcessAxisAsButton (_axisShoot, Threshold.y, ShootAxis);
-				SecondaryShootAxis = MMInput.ProcessAxisAsButton(_axisShootSecondary, Threshold.y, SecondaryShootAxis, MMInput.AxisTypes.Positive);
+				ShootAxis = InputClass.ProcessAxisAsButton (_axisShoot, Threshold.y, ShootAxis);
+				SecondaryShootAxis = InputClass.ProcessAxisAsButton(_axisShootSecondary, Threshold.y, SecondaryShootAxis, InputClass.AxisTypes.Positive);
 			}
 		}
 
@@ -504,59 +504,59 @@ namespace MoreMountains.TopDownEngine
 		{
 			if (!hasFocus && ResetButtonStatesOnFocusLoss && (ButtonList != null))
 			{
-				foreach (MMInput.IMButton button in ButtonList)
+				foreach (InputClass.IMButton button in ButtonList)
 				{
-					button.State.ChangeState(MMInput.ButtonStates.ButtonUp);
+					button.State.ChangeState(InputClass.ButtonStates.ButtonUp);
 				}
 			}
 		}
 
-		public virtual void JumpButtonDown()		{ JumpButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void JumpButtonPressed()		{ JumpButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void JumpButtonUp()			{ JumpButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void JumpButtonDown()		{ JumpButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void JumpButtonPressed()		{ JumpButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void JumpButtonUp()			{ JumpButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void DashButtonDown()		{ DashButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void DashButtonPressed()		{ DashButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void DashButtonUp()			{ DashButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void DashButtonDown()		{ DashButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void DashButtonPressed()		{ DashButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void DashButtonUp()			{ DashButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void CrouchButtonDown()		{ CrouchButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void CrouchButtonPressed()	{ CrouchButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void CrouchButtonUp()		{ CrouchButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void CrouchButtonDown()		{ CrouchButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void CrouchButtonPressed()	{ CrouchButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void CrouchButtonUp()		{ CrouchButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void RunButtonDown()			{ RunButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void RunButtonPressed()		{ RunButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void RunButtonUp()			{ RunButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void RunButtonDown()			{ RunButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void RunButtonPressed()		{ RunButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void RunButtonUp()			{ RunButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void ReloadButtonDown()		{ ReloadButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void ReloadButtonPressed()	{ ReloadButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void ReloadButtonUp()		{ ReloadButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void ReloadButtonDown()		{ ReloadButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void ReloadButtonPressed()	{ ReloadButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void ReloadButtonUp()		{ ReloadButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void InteractButtonDown() { InteractButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
-		public virtual void InteractButtonPressed() { InteractButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
-		public virtual void InteractButtonUp() { InteractButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+		public virtual void InteractButtonDown() { InteractButton.State.ChangeState(InputClass.ButtonStates.ButtonDown); }
+		public virtual void InteractButtonPressed() { InteractButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed); }
+		public virtual void InteractButtonUp() { InteractButton.State.ChangeState(InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void ShootButtonDown()		{ ShootButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void ShootButtonPressed()	{ ShootButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void ShootButtonUp()			{ ShootButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void ShootButtonDown()		{ ShootButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void ShootButtonPressed()	{ ShootButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void ShootButtonUp()			{ ShootButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void SecondaryShootButtonDown() { SecondaryShootButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
-		public virtual void SecondaryShootButtonPressed() { SecondaryShootButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
-		public virtual void SecondaryShootButtonUp() { SecondaryShootButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+		public virtual void SecondaryShootButtonDown() { SecondaryShootButton.State.ChangeState(InputClass.ButtonStates.ButtonDown); }
+		public virtual void SecondaryShootButtonPressed() { SecondaryShootButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed); }
+		public virtual void SecondaryShootButtonUp() { SecondaryShootButton.State.ChangeState(InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void PauseButtonDown() { PauseButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
-		public virtual void PauseButtonPressed() { PauseButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
-		public virtual void PauseButtonUp() { PauseButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+		public virtual void PauseButtonDown() { PauseButton.State.ChangeState(InputClass.ButtonStates.ButtonDown); }
+		public virtual void PauseButtonPressed() { PauseButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed); }
+		public virtual void PauseButtonUp() { PauseButton.State.ChangeState(InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void TimeControlButtonDown() { TimeControlButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
-		public virtual void TimeControlButtonPressed() { TimeControlButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
-		public virtual void TimeControlButtonUp() { TimeControlButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+		public virtual void TimeControlButtonDown() { TimeControlButton.State.ChangeState(InputClass.ButtonStates.ButtonDown); }
+		public virtual void TimeControlButtonPressed() { TimeControlButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed); }
+		public virtual void TimeControlButtonUp() { TimeControlButton.State.ChangeState(InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void SwitchWeaponButtonDown()		{ SwitchWeaponButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
-		public virtual void SwitchWeaponButtonPressed()		{ SwitchWeaponButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
-		public virtual void SwitchWeaponButtonUp()			{ SwitchWeaponButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
+		public virtual void SwitchWeaponButtonDown()		{ SwitchWeaponButton.State.ChangeState (InputClass.ButtonStates.ButtonDown); }
+		public virtual void SwitchWeaponButtonPressed()		{ SwitchWeaponButton.State.ChangeState (InputClass.ButtonStates.ButtonPressed); }
+		public virtual void SwitchWeaponButtonUp()			{ SwitchWeaponButton.State.ChangeState (InputClass.ButtonStates.ButtonUp); }
 
-		public virtual void SwitchCharacterButtonDown() { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
-		public virtual void SwitchCharacterButtonPressed() { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
-		public virtual void SwitchCharacterButtonUp() { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+		public virtual void SwitchCharacterButtonDown() { SwitchCharacterButton.State.ChangeState(InputClass.ButtonStates.ButtonDown); }
+		public virtual void SwitchCharacterButtonPressed() { SwitchCharacterButton.State.ChangeState(InputClass.ButtonStates.ButtonPressed); }
+		public virtual void SwitchCharacterButtonUp() { SwitchCharacterButton.State.ChangeState(InputClass.ButtonStates.ButtonUp); }
 	}
 }

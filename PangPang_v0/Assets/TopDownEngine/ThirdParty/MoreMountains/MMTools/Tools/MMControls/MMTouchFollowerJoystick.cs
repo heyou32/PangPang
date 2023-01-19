@@ -305,10 +305,10 @@ namespace MoreMountains.Tools
 			if (BackgroundConstraintRectTransform != null)
 			{
 				float gizmoSize = 0.3f;
-				MMDebug.DrawGizmoPoint(_innerRectTransformBottomLeft, Color.cyan, gizmoSize);
-				MMDebug.DrawGizmoPoint(_innerRectTransformTopLeft, Color.cyan, gizmoSize);
-				MMDebug.DrawGizmoPoint(_innerRectTransformTopRight, Color.cyan, gizmoSize);
-				MMDebug.DrawGizmoPoint(_innerRectTransformBottomRight, Color.cyan, gizmoSize);
+				PhysicsDebug.DrawGizmoPoint(_innerRectTransformBottomLeft, Color.cyan, gizmoSize);
+				PhysicsDebug.DrawGizmoPoint(_innerRectTransformTopLeft, Color.cyan, gizmoSize);
+				PhysicsDebug.DrawGizmoPoint(_innerRectTransformTopRight, Color.cyan, gizmoSize);
+				PhysicsDebug.DrawGizmoPoint(_innerRectTransformBottomRight, Color.cyan, gizmoSize);
 			}
 		}
 		#endif

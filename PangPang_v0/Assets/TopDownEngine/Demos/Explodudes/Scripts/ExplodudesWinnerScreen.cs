@@ -35,7 +35,7 @@ namespace MoreMountains.TopDownEngine
 			switch (tdEvent.EventType)
 			{
 				case TopDownEngineEventTypes.GameOver:
-					if (PlayerID == (LevelManager.Instance as ExplodudesMultiplayerLevelManager).WinnerID)
+					if (PlayerID == (LevelManager.Instance as PangPangMultiplayerLevelManager).WinnerID)
 					{
 						WinnerScreen.gameObject.SetActive(true);
 						WinnerScreen.alpha = 0f;

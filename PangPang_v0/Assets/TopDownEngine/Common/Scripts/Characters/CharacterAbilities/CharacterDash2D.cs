@@ -106,7 +106,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			if (_inputManager.DashButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.DashButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				DashStart();
 			}

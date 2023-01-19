@@ -20,8 +20,8 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual void Awake()
 		{
-			MMDebug.SetDebugLogsEnabled(DebugLogsEnabled);
-			MMDebug.SetDebugDrawEnabled(DebugDrawEnabled);
+			PhysicsDebug.SetDebugLogsEnabled(DebugLogsEnabled);
+			PhysicsDebug.SetDebugDrawEnabled(DebugDrawEnabled);
 		}
 	}
 }

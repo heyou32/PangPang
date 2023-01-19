@@ -29,10 +29,10 @@ namespace MoreMountains.TopDownEngine
 			}
 			base.Initialization();
             
-			if (_weapon.Owner?.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterOrientation2D>() != null)
+			if (_weapon.Owner?.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterOrientation2D>() != null)
 			{
 				_hasOrientation2D = true;
-				switch (_weapon.Owner?.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterOrientation2D>().CurrentFacingDirection)
+				switch (_weapon.Owner?.gameObject.GetComponentNoAlloc<Character>()?.FindAbility<CharacterOrientation2D>().CurrentFacingDirection)
 				{
 					case Character.FacingDirections.East:
 						_lastNonNullMovement = Vector2.right;
@@ -444,7 +444,7 @@ namespace MoreMountains.TopDownEngine
 				CurrentAngle = 0f;
 				RotateWeapon(_initialRotation);
 			}
-			MMDebug.DebugDrawArrow(this.transform.position, _currentAimAbsolute.normalized, Color.green);
+			PhysicsDebug.DebugDrawArrow(this.transform.position, _currentAimAbsolute.normalized, Color.green);
 		}
         
 		/// <summary>
@@ -480,9 +480,9 @@ namespace MoreMountains.TopDownEngine
 				_reticle = (GameObject)Instantiate(Reticle);
 				_reticle.transform.SetParent(GUIManager.Instance.MainCanvas.transform);
 				_reticle.transform.localScale = Vector3.one;
-				if (_reticle.gameObject.MMGetComponentNoAlloc<MMUIFollowMouse>() != null)
+				if (_reticle.gameObject.GetComponentNoAlloc<MMUIFollowMouse>() != null)
 				{
-					_reticle.gameObject.MMGetComponentNoAlloc<MMUIFollowMouse>().TargetCanvas = GUIManager.Instance.MainCanvas;
+					_reticle.gameObject.GetComponentNoAlloc<MMUIFollowMouse>().TargetCanvas = GUIManager.Instance.MainCanvas;
 				}
 			}
 		}

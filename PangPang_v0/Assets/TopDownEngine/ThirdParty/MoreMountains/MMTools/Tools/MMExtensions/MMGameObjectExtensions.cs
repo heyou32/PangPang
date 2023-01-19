@@ -32,7 +32,7 @@ namespace MoreMountains.Tools
 		/// <typeparam name="T"></typeparam>
 		/// <param name="this"></param>
 		/// <returns></returns>
-		public static T MMGetComponentNoAlloc<T>(this GameObject @this) where T : Component
+		public static T GetComponentNoAlloc<T>(this GameObject @this) where T : Component
 		{
 			@this.GetComponents(typeof(T), m_ComponentCache);
 			Component component = m_ComponentCache.Count > 0 ? m_ComponentCache[0] : null;

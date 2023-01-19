@@ -82,11 +82,11 @@ namespace MoreMountains.TopDownEngine
 		public MMLoadScene.LoadingSceneModes LoadingSceneMode = MMLoadScene.LoadingSceneModes.MMSceneLoadingManager;
 		/// the name of the MMSceneLoadingManager scene you want to use
 		[Tooltip("the name of the MMSceneLoadingManager scene you want to use")]
-		[MMEnumCondition("LoadingSceneMode", (int) MMLoadScene.LoadingSceneModes.MMSceneLoadingManager)]
+		[EnumCondition("LoadingSceneMode", (int) MMLoadScene.LoadingSceneModes.MMSceneLoadingManager)]
 		public string LoadingSceneName = "LoadingScreen";
 		/// the settings to use when loading the scene in additive mode
 		[Tooltip("the settings to use when loading the scene in additive mode")]
-		[MMEnumCondition("LoadingSceneMode", (int)MMLoadScene.LoadingSceneModes.MMAdditiveSceneLoadingManager)]
+		[EnumCondition("LoadingSceneMode", (int)MMLoadScene.LoadingSceneModes.MMAdditiveSceneLoadingManager)]
 		public MMAdditiveSceneLoadingManagerSettings AdditiveLoadingSettings; 
 		
 		[Header("Feedbacks")] 
@@ -360,7 +360,7 @@ namespace MoreMountains.TopDownEngine
 					SceneManager.LoadScene(destinationScene);			        
 					break;
 				case MMLoadScene.LoadingSceneModes.MMSceneLoadingManager:
-					MMSceneLoadingManager.LoadScene(destinationScene, LoadingSceneName);
+					SceneLoadingManager.LoadScene(destinationScene, LoadingSceneName);
 					break;
 				case MMLoadScene.LoadingSceneModes.MMAdditiveSceneLoadingManager:
 					MMAdditiveSceneLoadingManager.LoadScene(levelName, AdditiveLoadingSettings);
@@ -423,7 +423,7 @@ namespace MoreMountains.TopDownEngine
 					TopDownEngineEvent.Trigger(TopDownEngineEventTypes.GameOver, null);
 					if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
 					{
-						MMSceneLoadingManager.LoadScene(GameManager.Instance.GameOverScene);
+						SceneLoadingManager.LoadScene(GameManager.Instance.GameOverScene);
 					}
 				}
 			}

@@ -37,7 +37,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void GoToLevel()
 		{
-			MMSceneLoadingManager.LoadScene(SceneName);
+			SceneLoadingManager.LoadScene(SceneName);
 		}
 
 		/// <summary>

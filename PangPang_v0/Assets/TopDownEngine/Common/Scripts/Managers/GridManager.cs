@@ -11,46 +11,37 @@ namespace MoreMountains.TopDownEngine
 	[AddComponentMenu("TopDown Engine/Managers/GridManager")]
 	public class GridManager : MMSingleton<GridManager>
 	{
-		/// the possible types of debug modes
+		// 2D / 3D
 		public enum DebugDrawModes { TwoD, ThreeD }
 
 		[Header("Grid")]
-
-		/// the origin of the grid in world space
-		[Tooltip("the origin of the grid in world space")]
 		public Transform GridOrigin;
-		/// the size of each square grid cell
-		[Tooltip("the size of each square grid cell")]
 		public float GridUnitSize = 1f;
 
-		[Header("Debug")]
-
-		/// whether or not to draw the debug grid
-		[Tooltip("whether or not to draw the debug grid")]
+		[Header("Gizmo")]
+		[Tooltip("grid 를 디버그로 확인합니다")]
 		public bool DrawDebugGrid = true;
-		/// the mode in which to draw the debug grid
 		[MMCondition("DrawDebugGrid", true)]
-		[Tooltip("the mode in which to draw the debug grid")]
+		[Tooltip("debug grid Mode")]
 		public DebugDrawModes DebugDrawMode = DebugDrawModes.TwoD;
-		/// the size (in squares of the debug grid)
 		[MMCondition("DrawDebugGrid", true)]
 		[Tooltip("the size (in squares of the debug grid)")]
 		public int DebugGridSize = 30;
-		/// the color to use to draw the debug grid lines
 		[MMCondition("DrawDebugGrid", true)]
-		[Tooltip("the color to use to draw the debug grid lines")]
+		[Tooltip("debug grid line color")]
 		public Color CellBorderColor = new Color(60f, 221f, 255f, 1f);
-		/// the color to use to draw the debug grid cells backgrounds
 		[MMCondition("DrawDebugGrid", true)]
-		[Tooltip("the color to use to draw the debug grid cells backgrounds")]
+		[Tooltip("debug grid backgrounds color")]
 		public Color InnerColor = new Color(60f, 221f, 255f, 0.3f);
-		/// a list of all cells currently occupied
+				
 		[HideInInspector]
 		public List<Vector3> OccupiedGridCells;
 		/// a dictionary holding all last positions registered by objects traveling on the grid
+		// 마지막 위치 dictionary
 		[HideInInspector]
 		public Dictionary<GameObject, Vector3Int> LastPositions;
 		/// a dictionary holding all next positions registered by objects traveling on the grid
+		// 다음 위치 dictionary
 		[HideInInspector]
 		public Dictionary<GameObject, Vector3Int> NextPositions;
 
@@ -58,10 +49,7 @@ namespace MoreMountains.TopDownEngine
 		protected Vector3 _debugOrigin = Vector3.zero;
 		protected Vector3 _debugDestination = Vector3.zero;
 		protected Vector3Int _workCoordinate = Vector3Int.zero;
-
-		/// <summary>
-		/// On start we initialize our lists and dictionaries
-		/// </summary>
+		
 		protected virtual void Start()
 		{
 			OccupiedGridCells = new List<Vector3>();

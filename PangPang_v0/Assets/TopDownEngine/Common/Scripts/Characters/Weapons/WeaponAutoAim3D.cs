@@ -96,7 +96,7 @@ namespace MoreMountains.TopDownEngine
 			foreach (Transform t in _potentialTargets)
 			{
 				_raycastDirection = t.position - _raycastOrigin;
-				RaycastHit hit = MMDebug.Raycast3D(_raycastOrigin, _raycastDirection, _raycastDirection.magnitude, ObstacleMask.value, Color.yellow, true);
+				RaycastHit hit = PhysicsDebug.Raycast3D(_raycastOrigin, _raycastDirection, _raycastDirection.magnitude, ObstacleMask.value, Color.yellow, true);
 				if (hit.collider == null)
 				{
 					Target = t;

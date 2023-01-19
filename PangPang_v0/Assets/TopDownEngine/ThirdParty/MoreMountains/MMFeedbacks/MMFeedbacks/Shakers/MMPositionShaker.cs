@@ -20,11 +20,11 @@ namespace MoreMountains.Feedbacks
 		public Modes Mode = Modes.Transform;
 		/// the transform to shake the position of. If left blank, this component will target the transform it's put on.
 		[Tooltip("the transform to shake the position of. If left blank, this component will target the transform it's put on.")]
-		[MMEnumCondition("Mode", (int)Modes.Transform)]
+		[EnumCondition("Mode", (int)Modes.Transform)]
 		public Transform TargetTransform;
 		/// the rect transform to shake the position of. If left blank, this component will target the transform it's put on.
 		[Tooltip("the rect transform to shake the position of. If left blank, this component will target the transform it's put on.")]
-		[MMEnumCondition("Mode", (int)Modes.RectTransform)]
+		[EnumCondition("Mode", (int)Modes.RectTransform)]
 		public RectTransform TargetRectTransform;
 
 		[MMInspectorGroup("Shake Settings", true, 42)]

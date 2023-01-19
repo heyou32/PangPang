@@ -7,7 +7,7 @@ namespace MoreMountains.Tools
 	/// Input helpers
 	/// </summary>
 
-	public class MMInput : MonoBehaviour 
+	public class InputClass : MonoBehaviour 
 	{
 		/// <summary>
 		/// All possible states for a button. Can be used in a state machine.
@@ -61,7 +61,7 @@ namespace MoreMountains.Tools
 		public class IMButton
 		{
 			/// a state machine used to store button states
-			public MMStateMachine<MMInput.ButtonStates> State {get;protected set;}
+			public MMStateMachine<InputClass.ButtonStates> State {get;protected set;}
 			/// the unique ID of this button
 			public string ButtonID;
 
@@ -91,8 +91,8 @@ namespace MoreMountains.Tools
 				ButtonDownMethod = btnDown;
 				ButtonUpMethod = btnUp;
 				ButtonPressedMethod = btnPressed;
-				State = new MMStateMachine<MMInput.ButtonStates> (null, false);
-				State.ChangeState (MMInput.ButtonStates.Off);
+				State = new MMStateMachine<InputClass.ButtonStates> (null, false);
+				State.ChangeState (InputClass.ButtonStates.Off);
 			}
 
 			public virtual void TriggerButtonDown()
@@ -100,7 +100,7 @@ namespace MoreMountains.Tools
 				_lastButtonDownAt = Time.unscaledTime;
 				if (ButtonDownMethod == null)
 				{
-					State.ChangeState(MMInput.ButtonStates.ButtonDown);
+					State.ChangeState(InputClass.ButtonStates.ButtonDown);
 				}
 				else
 				{
@@ -112,7 +112,7 @@ namespace MoreMountains.Tools
 			{
 				if (ButtonPressedMethod == null)
 				{
-					State.ChangeState(MMInput.ButtonStates.ButtonPressed);
+					State.ChangeState(InputClass.ButtonStates.ButtonPressed);
 				}
 				else
 				{
@@ -125,7 +125,7 @@ namespace MoreMountains.Tools
 				_lastButtonUpAt = Time.unscaledTime;
 				if (ButtonUpMethod == null)
 				{
-					State.ChangeState(MMInput.ButtonStates.ButtonUp);
+					State.ChangeState(InputClass.ButtonStates.ButtonUp);
 				}
 				else
 				{

@@ -32,7 +32,7 @@ namespace MoreMountains.TopDownEngine
 		public virtual void LoadNextScene()
 		{
 			StoreCharacterSelection ();
-			MMSceneLoadingManager.LoadScene(DestinationSceneName);
+			SceneLoadingManager.LoadScene(DestinationSceneName);
 		}
 	}
 }

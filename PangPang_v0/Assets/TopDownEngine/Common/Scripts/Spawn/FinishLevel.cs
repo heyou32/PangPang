@@ -39,7 +39,7 @@ namespace MoreMountains.TopDownEngine
 			}
 			else
 			{
-				MMSceneLoadingManager.LoadScene(LevelName);
+				SceneLoadingManager.LoadScene(LevelName);
 			}
 		}
 	}

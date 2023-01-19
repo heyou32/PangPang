@@ -90,7 +90,7 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("whether or not this Room should look at the level's start position and declare itself the current room on start or not")]
 		public bool AutoDetectFirstRoomOnStart = true;
 		/// the depth of the room (used to resize the z value of the confiner
-		[MMEnumCondition("Mode", (int)Modes.TwoD)]
+		[EnumCondition("Mode", (int)Modes.TwoD)]
 		[Tooltip("the depth of the room (used to resize the z value of the confiner")]
 		public float RoomDepth = 100f;
 

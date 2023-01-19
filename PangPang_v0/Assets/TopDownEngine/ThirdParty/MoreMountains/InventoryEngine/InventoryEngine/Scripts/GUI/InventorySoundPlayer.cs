@@ -54,8 +54,8 @@ namespace MoreMountains.InventoryEngine
 		{
 			SetupInventorySoundPlayer ();
 			_audioSource = GetComponent<AudioSource> ();
-			_targetInventoryName = this.gameObject.MMGetComponentNoAlloc<InventoryDisplay> ().TargetInventoryName;
-			_targetPlayerID = this.gameObject.MMGetComponentNoAlloc<InventoryDisplay> ().PlayerID;
+			_targetInventoryName = this.gameObject.GetComponentNoAlloc<InventoryDisplay> ().TargetInventoryName;
+			_targetPlayerID = this.gameObject.GetComponentNoAlloc<InventoryDisplay> ().PlayerID;
 		}
 
 		/// <summary>

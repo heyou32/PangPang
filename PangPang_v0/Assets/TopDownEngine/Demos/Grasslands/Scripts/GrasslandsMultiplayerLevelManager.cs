@@ -164,7 +164,7 @@ namespace MoreMountains.TopDownEngine
 				     || (Input.GetButton("Player4_Jump")) )
 				{
 					MMTimeScaleEvent.Trigger(MMTimeScaleMethods.Reset, 1f, 0f, false, 0f, true);
-					MMSceneLoadingManager.LoadScene(SceneManager.GetActiveScene().name);
+					SceneLoadingManager.LoadScene(SceneManager.GetActiveScene().name);
 				}
 			}
 		}
@@ -175,7 +175,7 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="pickEvent"></param>
 		public virtual void OnMMEvent(PickableItemEvent pickEvent)
 		{
-			_playerID = pickEvent.Picker.MMGetComponentNoAlloc<Character>()?.PlayerID;
+			_playerID = pickEvent.Picker.GetComponentNoAlloc<Character>()?.PlayerID;
 			for (int i = 0; i < Points.Length; i++)
 			{
 				if (Points[i].PlayerID == _playerID)

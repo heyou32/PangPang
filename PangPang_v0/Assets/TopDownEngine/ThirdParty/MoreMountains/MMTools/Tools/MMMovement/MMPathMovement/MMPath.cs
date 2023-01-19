@@ -316,7 +316,7 @@ namespace MoreMountains.Tools
 			for (int i=0;i<PathElements.Count;i++)
 			{
 				// we draw a green point 
-				MMDebug.DrawGizmoPoint(_originalTransformPosition+PathElements[i].PathElementPosition,0.2f,Color.green);
+				PhysicsDebug.DrawGizmoPoint(_originalTransformPosition+PathElements[i].PathElementPosition,0.2f,Color.green);
 
 				// we draw a line towards the next point in the path
 				if ((i+1)<PathElements.Count)
@@ -337,8 +337,8 @@ namespace MoreMountains.Tools
 			{
 				if (_currentPoint != null)
 				{
-					MMDebug.DrawGizmoPoint(_originalTransformPosition + _currentPoint.Current,0.2f,Color.blue);
-					MMDebug.DrawGizmoPoint(_originalTransformPosition + _previousPoint,0.2f,Color.red);	
+					PhysicsDebug.DrawGizmoPoint(_originalTransformPosition + _currentPoint.Current,0.2f,Color.blue);
+					PhysicsDebug.DrawGizmoPoint(_originalTransformPosition + _previousPoint,0.2f,Color.red);	
 				}
 			}
 			#endif

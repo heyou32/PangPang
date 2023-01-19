@@ -37,7 +37,7 @@ namespace MoreMountains.Feedbacks
 
 		/// the ID of the channel on which this feedback will communicate 
 		[Tooltip("the ID of the channel on which this feedback will communicate")]
-		[MMEnumCondition("ChannelMode", (int)MMChannelModes.Int)]
+		[EnumCondition("ChannelMode", (int)MMChannelModes.Int)]
 		public int Channel = 0;
 
 		/// the MMChannel definition asset to use to broadcast this feedback. The shaker will have to reference that same MMChannel definition to receive events - to create a MMChannel,
@@ -45,7 +45,7 @@ namespace MoreMountains.Feedbacks
 		[Tooltip(
 			"the MMChannel definition asset to use to broadcast this feedback. The shaker will have to reference that same MMChannel definition to receive events - to create a MMChannel, " +
 			"right click anywhere in your project (usually in a Data folder) and go MoreMountains > MMChannel, then name it with some unique name")]
-		[MMEnumCondition("ChannelMode", (int)MMChannelModes.MMChannel)]
+		[EnumCondition("ChannelMode", (int)MMChannelModes.MMChannel)]
 		public MMChannel MMChannelDefinition = null;
 
 		/// the chance of this feedback happening (in percent : 100 : happens all the time, 0 : never happens, 50 : happens once every two calls, etc)

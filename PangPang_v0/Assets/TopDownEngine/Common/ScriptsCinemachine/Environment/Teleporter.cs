@@ -31,7 +31,7 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("the selected teleportation mode ")]
 		public TeleportationModes TeleportationMode = TeleportationModes.Instant;
 		/// the curve to apply to the teleportation tween 
-		[MMEnumCondition("TeleportationMode", (int)TeleportationModes.Tween)]
+		[EnumCondition("TeleportationMode", (int)TeleportationModes.Tween)]
 		[Tooltip("the curve to apply to the teleportation tween")]
 		public MMTween.MMTweenCurve TweenCurve = MMTween.MMTweenCurve.EaseInCubic;
 		/// whether or not to maintain the x value of the teleported object on exit
@@ -453,16 +453,16 @@ namespace MoreMountains.TopDownEngine
 			if (Destination != null)
 			{
 				// draws an arrow from this teleporter to its destination
-				MMDebug.DrawGizmoArrow(this.transform.position, (Destination.transform.position + Destination.ExitOffset) - this.transform.position, Color.cyan, 1f, 25f);
+				PhysicsDebug.DrawGizmoArrow(this.transform.position, (Destination.transform.position + Destination.ExitOffset) - this.transform.position, Color.cyan, 1f, 25f);
 				// draws a point at the exit position 
-				MMDebug.DebugDrawCross(this.transform.position + ExitOffset, 0.5f, Color.yellow);
-				MMDebug.DrawPoint(this.transform.position + ExitOffset, Color.yellow, 0.5f);
+				PhysicsDebug.DebugDrawCross(this.transform.position + ExitOffset, 0.5f, Color.yellow);
+				PhysicsDebug.DrawPoint(this.transform.position + ExitOffset, Color.yellow, 0.5f);
 			}
 
 			if (TargetRoom != null)
 			{
 				// draws an arrow to the destination room
-				MMDebug.DrawGizmoArrow(this.transform.position, TargetRoom.transform.position - this.transform.position, MMColors.Pink, 1f, 25f);
+				PhysicsDebug.DrawGizmoArrow(this.transform.position, TargetRoom.transform.position - this.transform.position, MMColors.Pink, 1f, 25f);
 			}
 		}
 	}

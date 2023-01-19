@@ -124,7 +124,7 @@ namespace MoreMountains.TopDownEngine
 		/// <param name="controller">The TopDown controller that collides with the platform.</param>		
 		public virtual void OnTriggerStay2D(Collider2D collider)
 		{
-			TopDownController2D controller = collider.gameObject.MMGetComponentNoAlloc<TopDownController2D>();
+			TopDownController2D controller = collider.gameObject.GetComponentNoAlloc<TopDownController2D>();
 			if (controller == null)
 			{
 				return;

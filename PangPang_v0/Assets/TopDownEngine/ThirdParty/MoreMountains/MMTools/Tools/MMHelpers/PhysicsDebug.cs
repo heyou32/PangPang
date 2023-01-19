@@ -15,7 +15,7 @@ namespace MoreMountains.Tools
 	/// <summary>
 	/// Debug helpers
 	/// </summary>
-	public static class MMDebug 
+	public static class PhysicsDebug 
 	{
 		#region Commands
 
@@ -936,7 +936,7 @@ namespace MoreMountains.Tools
 			Vector3 pos = new Vector3( rectangle.x + rectangle.width/2, rectangle.y + rectangle.height/2, 0.0f );
 			Vector3 scale = new Vector3 (rectangle.width, rectangle.height, 0.0f );
 
-			MMDebug.DrawRectangle (pos, color, scale); 
+			PhysicsDebug.DrawRectangle (pos, color, scale); 
 		}	
 
 		/// <summary>

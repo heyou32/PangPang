@@ -24,13 +24,13 @@ namespace MoreMountains.Tools
 		/// the moment you want the countdown to state change to start
 		public ActivationModes ActivationMode = ActivationModes.Start;
 		/// the target layer for activation if using OnTriggerEnter or OnTriggerExit
-		[MMEnumCondition("ActivationMode", (int)ActivationModes.OnTriggerEnter, (int)ActivationModes.OnTriggerExit)]
+		[EnumCondition("ActivationMode", (int)ActivationModes.OnTriggerEnter, (int)ActivationModes.OnTriggerExit)]
 		public TriggerModes TriggerMode;
 		/// the layer the target collider should be on
-		[MMEnumCondition("TriggerMode", (int)TriggerModes.Layer)]
+		[EnumCondition("TriggerMode", (int)TriggerModes.Layer)]
 		public LayerMask TargetTriggerLayer;
 		/// the tag the target collider should have
-		[MMEnumCondition("TriggerMode", (int)TriggerModes.Tag)]
+		[EnumCondition("TriggerMode", (int)TriggerModes.Tag)]
 		public string TargetTriggerTag;
 
         
@@ -39,10 +39,10 @@ namespace MoreMountains.Tools
 		/// the chosen delay mode, whether to wait in seconds or frames
 		public DelayModes DelayMode = DelayModes.Time;
 		/// The time (in seconds) before we destroy the object
-		[MMEnumCondition("DelayMode", (int)DelayModes.Time)]
+		[EnumCondition("DelayMode", (int)DelayModes.Time)]
 		public float TimeBeforeStateChange = 2;
 		/// the amount of frames to wait for when in Frames DelayMode
-		[MMEnumCondition("DelayMode", (int)DelayModes.Frames)]
+		[EnumCondition("DelayMode", (int)DelayModes.Frames)]
 		public int FrameCount = 1;
 
 		[Header("Timed Activation")]

@@ -21,10 +21,10 @@ namespace  MoreMountains.Tools
 		/// whether to point at this transform's movement direction, or at a target
 		public FacingModes FacingMode = FacingModes.MovementDirection;
 		/// the target to face
-		[MMEnumCondition("FacingMode", (int) FacingModes.Target)]
+		[EnumCondition("FacingMode", (int) FacingModes.Target)]
 		public Transform FacingTarget;
 		/// the minimum distance to consider when computing the movement direction
-		[MMEnumCondition("FacingMode", (int) FacingModes.MovementDirection)]
+		[EnumCondition("FacingMode", (int) FacingModes.MovementDirection)]
 		public float MinimumMovementThreshold = 0.2f;
         
 		[Header("Directions")]

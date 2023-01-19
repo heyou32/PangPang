@@ -32,11 +32,11 @@ namespace MoreMountains.Tools
 
 		/// when in priority mode, the priority this camera should have when the zone is active
 		[Tooltip("when in priority mode, the priority this camera should have when the zone is active")]
-		[MMEnumCondition("Mode", (int)Modes.Priority)]
+		[EnumCondition("Mode", (int)Modes.Priority)]
 		public int EnabledPriority = 10;
 		/// when in priority mode, the priority this camera should have when the zone is inactive
 		[Tooltip("when in priority mode, the priority this camera should have when the zone is inactive")]
-		[MMEnumCondition("Mode", (int)Modes.Priority)]
+		[EnumCondition("Mode", (int)Modes.Priority)]
 		public int DisabledPriority = 0;
 
 		[Header("Collisions")] 

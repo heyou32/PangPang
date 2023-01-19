@@ -12,7 +12,7 @@ namespace MoreMountains.Tools
 	/// A class to load scenes using a loading screen instead of just the default API
 	/// This class used to be known as LoadingSceneManager, and has now been renamed to MMSceneLoadingManager for consistency
 	/// </summary>
-	public class MMSceneLoadingManager : MonoBehaviour 
+	public class SceneLoadingManager : MonoBehaviour 
 	{
 		public enum LoadingStatus
 		{
@@ -40,7 +40,7 @@ namespace MoreMountains.Tools
 
 		[Header("Binding")]
 		/// The name of the scene to load while the actual target scene is loading (usually a loading screen)
-		public static string LoadingScreenSceneName="LoadingScreen";
+		public static string LoadingScreenSceneName="LoadingScene";
 
 		[Header("GameObjects")]
 		/// the text object where you want the loading message to be displayed
@@ -80,10 +80,7 @@ namespace MoreMountains.Tools
 			_sceneToLoad = sceneToLoad;					
 			Application.backgroundLoadingPriority = ThreadPriority.High;
 			if (LoadingScreenSceneName!=null)
-			{
-				LoadingSceneEvent.Trigger(sceneToLoad, LoadingStatus.LoadStarted);
 				SceneManager.LoadScene(LoadingScreenSceneName);
-			}
 		}
 
 		/// <summary>
@@ -112,7 +109,7 @@ namespace MoreMountains.Tools
 			}        
 		}
 
-		/// <summary>
+		/// <summary>ㄴ
 		/// Every frame, we fill the bar smoothly according to loading progress
 		/// </summary>
 		protected virtual void Update()
@@ -126,43 +123,36 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual IEnumerator LoadAsynchronously() 
 		{
-			// we setup our various visual elements
 			LoadingSetup();
-
-			// we fade from black
-			MMFadeOutEvent.Trigger(StartFadeDuration, _tween);
 			yield return new WaitForSeconds(StartFadeDuration);
             
-			// we start loading the scene
+			// 다음 Scene 로딩 시작
 			_asyncOperation = SceneManager.LoadSceneAsync(_sceneToLoad,LoadSceneMode.Single );
 			_asyncOperation.allowSceneActivation = false;
 
-			// while the scene loads, we assign its progress to a target that we'll use to fill the progress bar smoothly
+			// 로딩 중 로딩바를 그린다
 			while (_asyncOperation.progress < 0.9f) 
 			{
 				_fillTarget = _asyncOperation.progress;
 				yield return null;
-			}
-			// when the load is close to the end (it'll never reach it), we set it to 100%
-			_fillTarget = 1f;
+			}			
 
-			// we wait for the bar to be visually filled to continue
+			// 로딩바가 1까지 도달할 수 있도록
+			_fillTarget = 1f;
 			while (_progressBarImage.fillAmount != _fillTarget)
 			{
 				yield return null;
 			}
 
-			// the load is now complete, we replace the bar with the complete animation
+			// 로딩바 이후 에니메이션
 			LoadingComplete();
 			yield return new WaitForSeconds(LoadCompleteDelay);
 
-			// we fade to black
 			MMFadeInEvent.Trigger(ExitFadeDuration, _tween);
 			yield return new WaitForSeconds(ExitFadeDuration);
 
-			// we switch to the new scene
+			// Scene 로드 완료
 			_asyncOperation.allowSceneActivation = true;
-			LoadingSceneEvent.Trigger(_sceneToLoad, LoadingStatus.LoadTransitionComplete);
 		}
 
 		/// <summary>

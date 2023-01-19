@@ -87,7 +87,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			if (_inputManager.SwitchCharacterButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.SwitchCharacterButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				SwitchModel();
 			}	
@@ -145,7 +145,7 @@ namespace MoreMountains.TopDownEngine
 			// we bind our animator
 			if (AutoBindAnimator)
 			{
-				_character.CharacterAnimator = CharacterModels[CurrentIndex].gameObject.MMGetComponentNoAlloc<Animator>();
+				_character.CharacterAnimator = CharacterModels[CurrentIndex].gameObject.GetComponentNoAlloc<Animator>();
 				_character.AssignAnimator(true);
 				SendMessage(_bindAnimatorMessage, SendMessageOptions.DontRequireReceiver);                
 			} 

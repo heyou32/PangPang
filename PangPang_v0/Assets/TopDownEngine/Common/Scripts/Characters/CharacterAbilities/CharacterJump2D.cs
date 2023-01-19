@@ -60,11 +60,11 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-			if (_inputManager.JumpButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.JumpButton.State.CurrentState == InputClass.ButtonStates.ButtonDown)
 			{
 				JumpStart();
 			}
-			if (_inputManager.JumpButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
+			if (_inputManager.JumpButton.State.CurrentState == InputClass.ButtonStates.ButtonUp)
 			{
 				_buttonReleased = true;
 			}

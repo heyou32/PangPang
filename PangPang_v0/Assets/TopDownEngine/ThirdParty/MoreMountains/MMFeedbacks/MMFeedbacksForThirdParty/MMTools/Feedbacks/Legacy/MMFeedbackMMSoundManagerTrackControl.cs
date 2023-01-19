@@ -35,7 +35,7 @@ namespace MoreMountains.Feedbacks
 		public ControlModes ControlMode = ControlModes.Pause;
 		/// if setting the volume, the volume to assign to the track 
 		[Tooltip("if setting the volume, the volume to assign to the track")]
-		[MMEnumCondition("ControlMode", (int) ControlModes.SetVolume)]
+		[EnumCondition("ControlMode", (int) ControlModes.SetVolume)]
 		public float Volume = 0.5f;
 
 		/// <summary>
