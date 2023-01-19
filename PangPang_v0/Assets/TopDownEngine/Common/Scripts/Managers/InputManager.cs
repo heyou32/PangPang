@@ -242,7 +242,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Update()
 		{		
-			if (IsMobile && InputDetectionActive)
+			if (!IsMobile && InputDetectionActive)
 			{	
 				SetMovement();	
 				SetSecondaryMovement ();
