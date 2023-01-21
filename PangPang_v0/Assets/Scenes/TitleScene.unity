@@ -22342,7 +22342,7 @@ GameObject:
   - component: {fileID: 809602924}
   - component: {fileID: 809602923}
   m_Layer: 0
-  m_Name: AuthObject
+  m_Name: AuthManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23643,7 +23643,7 @@ GameObject:
   - component: {fileID: 843121043}
   - component: {fileID: 843121042}
   m_Layer: 5
-  m_Name: InputField_Username
+  m_Name: InputField_Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54154,7 +54154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: User ID
+  m_text: Email
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 269e4b0fb077544c2b15a49311d9d770, type: 2}
   m_sharedMaterial: {fileID: -7420420972969883519, guid: 269e4b0fb077544c2b15a49311d9d770,
