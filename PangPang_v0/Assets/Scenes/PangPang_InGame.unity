@@ -7178,6 +7178,10 @@ MonoBehaviour:
   NormalizedValue: {x: 0, y: 0}
   Magnitude: 0
   DrawGizmos: 0
+  maxRange: 80
+  speed: 0.2
+  bombKey: 32
+  bombButton: {fileID: 1786215526}
 --- !u!114 &566286012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22123,7 +22127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786215522}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -22167,7 +22171,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786215522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
@@ -36157,6 +36161,10 @@ MonoBehaviour:
   NormalizedValue: {x: 0, y: 0}
   Magnitude: 0
   DrawGizmos: 0
+  maxRange: 30
+  speed: 0.5
+  bombKey: 32
+  bombButton: {fileID: 0}
 --- !u!114 &114746507705739684
 MonoBehaviour:
   m_ObjectHideFlags: 0

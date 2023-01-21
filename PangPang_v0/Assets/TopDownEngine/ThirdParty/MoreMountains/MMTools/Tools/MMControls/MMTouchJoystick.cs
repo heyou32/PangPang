@@ -2,6 +2,8 @@
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using System;
+using UnityEngine.UI;
+using System.Collections;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -110,7 +112,19 @@ namespace MoreMountains.Tools
 		protected float _initialOpacity;
 		protected Transform _knobTransform;
 		protected bool _rotatingIndicatorIsNotNull = false;
-		
+
+
+#if UNITY_EDITOR
+       // [MMInspectorGroup("Debug", true, 18)]
+        public float maxRange = 80f;
+        Vector3 ori, dest;
+        public float speed = .2f;
+        Coroutine nowCoroutine;
+        public KeyCode bombKey = KeyCode.Space;
+        public Image bombButton;
+#endif
+
+
 		/// <summary>
 		/// On Start we initialize our stick
 		/// </summary>
@@ -168,12 +182,73 @@ namespace MoreMountains.Tools
 			
 			RotateIndicator();
 			HandleOpacity();
-		}
 
-		/// <summary>
-		/// Changes or interpolates the opacity of the knob
-		/// </summary>
-		protected virtual void HandleOpacity()
+#if UNITY_EDITOR
+			// Input UI에 보여주기
+            FollowtheKey(KeyCode.UpArrow);
+            FollowtheKey(KeyCode.DownArrow);
+            FollowtheKey(KeyCode.LeftArrow);
+            FollowtheKey(KeyCode.RightArrow);
+
+            if (Input.GetKeyDown(bombKey))
+                bombButton.color = new Color(1, 1, 1, 0.5f);
+            //bombButton.onClick.Invoke();
+            if (Input.GetKeyUp(bombKey))
+                bombButton.color = Color.white;
+#endif
+
+        }
+        void FollowtheKey(KeyCode keyCode)
+        {
+            if (Input.GetKeyDown(keyCode))
+            {
+                dest = Vector3.zero;
+                if (keyCode == KeyCode.UpArrow)
+                    dest.y = maxRange;
+                else if (keyCode == KeyCode.DownArrow)
+                    dest.y = -maxRange;
+                else if (keyCode == KeyCode.LeftArrow)
+                    dest.x = -maxRange;
+                else if (keyCode == KeyCode.RightArrow)
+                    dest.x = maxRange;
+
+                // 다른 키 들어오면 먼저 들어온 키 return     
+                if (nowCoroutine != null)
+                    StopCoroutine(nowCoroutine);
+                transform.localPosition = ori;
+                nowCoroutine = StartCoroutine(lerpCoroutine(transform.localPosition, transform.localPosition + dest, speed));
+            }
+            if (Input.GetKeyUp(keyCode))
+            {
+                if (nowCoroutine != null)
+                    StopCoroutine(nowCoroutine);
+                nowCoroutine = StartCoroutine(lerpCoroutine(transform.localPosition, ori, speed / 2));
+            }
+        }
+        IEnumerator lerpCoroutine(Vector3 current, Vector3 target, float time)
+        {
+            float elapsedTime = 0.0f;
+
+            this.transform.localPosition = current;
+            while (elapsedTime < time)
+            {
+                elapsedTime += (Time.deltaTime);
+
+                this.transform.localPosition
+                    = Vector3.Lerp(current, target, elapsedTime / time);
+
+                yield return null;
+            }
+
+            transform.localPosition = target;
+
+            yield return null;
+        }
+
+        /// <summary>
+        /// Changes or interpolates the opacity of the knob
+        /// </summary>
+        protected virtual void HandleOpacity()
 		{
 			if (InterpolateOpacity)
 			{
