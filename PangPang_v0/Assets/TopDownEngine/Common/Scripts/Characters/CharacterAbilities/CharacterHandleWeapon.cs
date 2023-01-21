@@ -302,7 +302,6 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void ShootStart()
 		{
-			Debug.Log("ShootStart()");
 			// if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
 			// 사용하지 않거나, 플레이어가 죽었을 때는 아무것도 하지 않는다.
 			if (!AbilityAuthorized
