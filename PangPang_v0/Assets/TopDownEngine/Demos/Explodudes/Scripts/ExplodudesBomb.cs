@@ -238,6 +238,7 @@ namespace MoreMountains.TopDownEngine
             _damageAreaSouth.gameObject.SetActive(false);
             _damageAreaCenter.gameObject.SetActive(false);
 
+
             yield return _additionalDelayBeforeDestruction;
             this.gameObject.SetActive(false);
         }
@@ -299,6 +300,8 @@ namespace MoreMountains.TopDownEngine
             ParticleSystem.ShapeModule shape = explosion.shape;
             shape.scale = new Vector3(0.1f, 0.1f, explosionLength);
             shape.rotation = new Vector3(0f, angle, 0f);
+
+            MMGameEvent.Trigger("Bomb");
         }
 
         /// <summary>
